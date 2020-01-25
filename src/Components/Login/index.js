@@ -1,21 +1,38 @@
 import React from "react";
 import styled from "styled-components";
 
-const Wrapper = styled.div``;
-const Title = styled.p``;
+const Wrapper = styled.div`
+  background: lightgrey;
+  border: 1px black solid;
+`;
+const Title = styled.h1`
+  font-size: 5rem;
+`;
+const Instructions = styled.span`
+  font-size: 2rem;
+`;
 const GameInput = styled.input``;
 const Button = styled.button``;
 
-export default function Login(props) {
-  const { loginFn } = props;
+export default class Login extends React.Component {
+  state = { input: "" };
 
-  return (
-    <Wrapper>
-      <Title>Enter a Game Code</Title>
-      <form onSubmit={loginFn}>
-        <GameInput type="text" />
-        <Button type="submit">Submit</Button>
-      </form>
-    </Wrapper>
-  );
+  render() {
+    const { loginFn } = this.props;
+    const { input } = this.state;
+
+    return (
+      <Wrapper>
+        <Title>TI4 Tracker</Title>
+        <Instructions>Enter a Game Code</Instructions>
+        <form onSubmit={() => loginFn(input)}>
+          <GameInput
+            type="text"
+            onChange={event => this.setState({ input: event.target.value })}
+          />
+          <Button type="submit">Submit</Button>
+        </form>
+      </Wrapper>
+    );
+  }
 }
