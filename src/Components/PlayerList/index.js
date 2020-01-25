@@ -5,7 +5,11 @@ import Player from "../Player";
 const Wrapper = styled.div``;
 const List = styled.ul``;
 const PlayerHeader = styled.li``;
-const Button = styled.span``;
+const Button = styled.span`
+  border: white 2px solid;
+  border-radius: 10px;
+  padding: 4px 12px;
+`;
 
 export default class PlayerList extends React.Component {
   render() {

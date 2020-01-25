@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 
 export default class App extends React.Component {
   state = {
-    gameId: 1234,
+    gameId: null,
     players: ["Carl", "Sean"],
     objectives: [],
     gameStarted: false
@@ -23,13 +23,20 @@ export default class App extends React.Component {
     this.setState({ players: updatedList });
   };
 
+  startGame = () => {
+    this.setState({ gameId: "1234" });
+  };
+
   render() {
     const { gameId, players } = this.state;
 
     return (
       <Wrapper>
         {gameId === null ? (
-          <Login loginFn={id => this.setState({ gameId: id })} />
+          <Login
+            startGameFn={this.startGame}
+            loginFn={id => this.setState({ gameId: id })}
+          />
         ) : (
           <header className="App-header">
             <p>Game Code {gameId}</p>
