@@ -7,14 +7,24 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 45% 55%;
+  grid-template-areas: "header header" "section1 section2";
   height: 100vh;
+
+  @media (max-width: 1000px) {
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 40% 40%;
+    grid-template-areas: "header" "section1" "section2";
+  }
 `;
 const Title = styled.h1`
   font-size: 5rem;
   margin: 0 auto;
   padding-bottom: 100px;
-  grid-row: 1;
-  grid-column: 1/3;
+  grid-area: header;
+
+  @media (max-width: 1000px) {
+    font-size: 4rem;
+  }
 `;
 const Instructions = styled.span`
   font-size: 2rem;
@@ -37,7 +47,7 @@ export default class Login extends React.Component {
           <Button onClick={startGameFn}>Start</Button>
         </div>
         <div>
-          <Instructions>Enter a Game Code to join a game</Instructions>
+          <Instructions>Join a game</Instructions>
           <form onSubmit={() => loginFn(input)}>
             <GameInput
               type="text"

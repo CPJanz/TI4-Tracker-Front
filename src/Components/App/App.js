@@ -1,8 +1,11 @@
 import React from "react";
 import logo from "./logo.svg";
 import styled from "styled-components";
-import Login from "../Login";
+import Login from "../LoginPage";
 import PlayerList from "../PlayerList";
+import Nav from "../Nav";
+import EditPage from "../EditPage";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 
 const Wrapper = styled.div`
@@ -38,20 +41,16 @@ export default class App extends React.Component {
             loginFn={id => this.setState({ gameId: id })}
           />
         ) : (
-          <header className="App-header">
-            <p>Game Code {gameId}</p>
-            <PlayerList playerData={players} addFn={this.addPlayer} />
-            <img src={logo} className="App-logo" alt="logo" />
-
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
+          <Router>
+            <header className="App-header">
+              <Nav gameId={gameId} />
+              <Switch>
+                <Route exact path="/login" component={Login} />
+                <Route path="/edit" component={EditPage} />
+                <Route render={() => <h1>404</h1>} />
+              </Switch>
+            </header>
+          </Router>
         )}
       </Wrapper>
     );
