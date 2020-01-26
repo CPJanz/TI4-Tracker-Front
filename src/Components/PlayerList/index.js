@@ -3,8 +3,8 @@ import styled from "styled-components";
 import Player from "../Player";
 
 const Wrapper = styled.div``;
-const List = styled.ul``;
-const PlayerHeader = styled.li``;
+const List = styled.table``;
+const PlayerHeader = styled.th``;
 const Button = styled.span`
   border: white 2px solid;
   border-radius: 10px;
@@ -21,10 +21,16 @@ export default class PlayerList extends React.Component {
           <div>
             <Button onClick={() => addFn("Nick")}>Add Player</Button>
             <List>
-              <PlayerHeader>Players</PlayerHeader>
-              {playerData.map((player, id) => (
-                <Player data={player} key={id} />
-              ))}
+              <thead>
+                <PlayerHeader>Player</PlayerHeader>
+                <PlayerHeader>Faction</PlayerHeader>
+                <PlayerHeader>Points</PlayerHeader>
+              </thead>
+              <tbody>
+                {playerData.map((player, id) => (
+                  <Player data={player} key={id} />
+                ))}
+              </tbody>
             </List>
           </div>
         )}
