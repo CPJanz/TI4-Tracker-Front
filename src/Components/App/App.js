@@ -1,12 +1,10 @@
 import React from "react";
-import logo from "./logo.svg";
 import styled from "styled-components";
 import Login from "../LoginPage";
-import PlayerList from "../PlayerList";
 import Nav from "../Nav";
 import EditPage from "../EditPage";
+import api from "../../Utils/api";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import "./App.css";
 
 const Wrapper = styled.div`
   text-align: center;
@@ -14,10 +12,8 @@ const Wrapper = styled.div`
 
 export default class App extends React.Component {
   state = {
-    gameId: null,
-    players: ["Carl", "Sean"],
-    objectives: [],
-    gameStarted: false
+    loginError: null,
+    game: null
   };
 
   addPlayer = player => {
@@ -27,26 +23,44 @@ export default class App extends React.Component {
   };
 
   startGame = () => {
-    this.setState({ gameId: "1234" });
+    api.createGame.then(response =>
+      response.gameCreated
+        ? this.setState({ game: response.game, loginError: null })
+        : this.setState({
+            loginError: "There was an error creating the game"
+          })
+    );
+  };
+
+  fetchGame = id => {
+    api.fetchGame(id).then(response => {
+      response.gameFound
+        ? this.setState({ game: response.game, loginError: null })
+        : this.setState({ loginError: "Game not found" });
+    });
   };
 
   render() {
-    const { gameId, players } = this.state;
-
+    const { game, loginError } = this.state;
+    console.log(game);
     return (
       <Wrapper>
-        {gameId === null ? (
+        {game === null ? (
           <Login
             startGameFn={this.startGame}
-            loginFn={id => this.setState({ gameId: id })}
+            loginFn={id => this.fetchGame(id)}
+            errorMessage={loginError}
           />
         ) : (
           <Router>
             <header className="App-header">
-              <Nav gameId={gameId} />
+              <Nav gameId={game.id} />
               <Switch>
                 <Route exact path="/login" component={Login} />
-                <Route path="/edit" component={EditPage} />
+                <Route
+                  path="/edit"
+                  render={() => <EditPage gameData={game} />}
+                />
                 <Route render={() => <h1>404</h1>} />
               </Switch>
             </header>

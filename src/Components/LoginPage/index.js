@@ -29,6 +29,10 @@ const Title = styled.h1`
 const Instructions = styled.span`
   font-size: 2rem;
 `;
+
+const Error = styled.span`
+  color: red;
+`;
 const GameInput = styled.input``;
 const Button = styled.button``;
 
@@ -36,7 +40,7 @@ export default class Login extends React.Component {
   state = { input: "" };
 
   render() {
-    const { loginFn, startGameFn } = this.props;
+    const { loginFn, startGameFn, errorMessage } = this.props;
     const { input } = this.state;
 
     return (
@@ -48,13 +52,16 @@ export default class Login extends React.Component {
         </div>
         <div>
           <Instructions>Join a game</Instructions>
-          <form onSubmit={() => loginFn(input)}>
+          <form>
             <GameInput
               type="text"
               onChange={event => this.setState({ input: event.target.value })}
             />
-            <Button type="submit">Submit</Button>
+            <Button type="button" onClick={() => loginFn(input)}>
+              Submit
+            </Button>
           </form>
+          {errorMessage && <Error>{errorMessage}</Error>}
         </div>
       </Wrapper>
     );

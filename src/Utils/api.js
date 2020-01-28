@@ -25,15 +25,45 @@ const TEMP_GAME_DATA = {
         }
       ]
     },
-    { name: "Sean", faction: "Sardaak Nor", points: [] }
+    {
+      name: "Sean",
+      faction: "Sardaak Nor",
+      points: [
+        {
+          type: "Public Objective",
+          id: "Sway the Council ",
+          roundClaimed: 3,
+          score: 1
+        }
+      ]
+    }
   ],
-  gameId: "12345",
-  round: "0"
+  id: "12345"
+};
+
+const TEMP_NEW_GAME_DATA = {
+  round: 0,
+  publicObjectives: [],
+  players: [],
+  id: "00001"
 };
 
 const api = {
-  fetchGame: gameId => {
-    return TEMP_GAME_DATA;
+  createGame: new Promise(resolve => {
+    setTimeout(() => {
+      resolve({ gameCreated: true, game: TEMP_NEW_GAME_DATA });
+    }, 3000);
+  }),
+  fetchGame: gameIdToFetch => {
+    return new Promise(resolve => {
+      console.log("truthy?", gameIdToFetch === TEMP_GAME_DATA.id);
+      setTimeout(() => {
+        resolve({
+          gameFound: gameIdToFetch === TEMP_GAME_DATA.id ? true : false,
+          game: gameIdToFetch === TEMP_GAME_DATA.id ? TEMP_GAME_DATA : null
+        });
+      }, 3000);
+    });
   }
 };
 
