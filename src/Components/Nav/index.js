@@ -32,9 +32,15 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 export default function Nav(props) {
+  const { id, round } = props.game;
+
   return (
     <Wrapper>
-      {props.gameId && <p>Game Code {props.gameId}</p>}
+      {id && (
+        <p>
+          Game Code {id} | Round {round}
+        </p>
+      )}
       <NavList>
         <ListItem>
           <StyledNavLink to="/edit" exact>

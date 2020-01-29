@@ -4,6 +4,13 @@ import Player from "../Player";
 
 const Wrapper = styled.div``;
 const PublicObjective = styled.div``;
+const Bubble = styled.span`
+  background-color: black;
+  color: white;
+  border-radius: 25%;
+  padding: auto 5px;
+  margin: auto 5px;
+`;
 
 const PlayersWhoCompleted = (players, objective) => {
   return players.filter(player => {
@@ -20,11 +27,12 @@ export default function DisplayPage(props) {
 
   return (
     <Wrapper>
+      <h3>Public Objectives</h3>
       {publicObjectives.map((objective, index) => (
         <PublicObjective key={index}>
           {objective.id}
           {PlayersWhoCompleted(players, objective.id).map(player => (
-            <span>- {player.name} -</span>
+            <Bubble>{player.name}</Bubble>
           ))}
         </PublicObjective>
       ))}

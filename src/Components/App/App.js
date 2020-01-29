@@ -55,7 +55,7 @@ export default class App extends React.Component {
         ) : (
           <Router>
             <header className="App-header">
-              <Nav gameId={game.id} />
+              <Nav game={game} />
               <Switch>
                 <Route exact path="/login" component={Login} />
                 <Route
