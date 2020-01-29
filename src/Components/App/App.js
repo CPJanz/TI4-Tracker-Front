@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Login from "../LoginPage";
 import Nav from "../Nav";
+import DisplayPage from "../DisplayPage";
 import EditPage from "../EditPage";
 import api from "../../Utils/api";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -60,6 +61,10 @@ export default class App extends React.Component {
                 <Route
                   path="/edit"
                   render={() => <EditPage gameData={game} />}
+                />
+                <Route
+                  path="/"
+                  render={() => <DisplayPage gameData={game} />}
                 />
                 <Route render={() => <h1>404</h1>} />
               </Switch>

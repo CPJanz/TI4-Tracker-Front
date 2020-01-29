@@ -19,7 +19,7 @@ const TEMP_GAME_DATA = {
         },
         {
           type: "Public Objective",
-          id: "Sway the Council ",
+          id: "Sway the Council",
           roundClaimed: 3,
           score: 1
         }
@@ -31,7 +31,7 @@ const TEMP_GAME_DATA = {
       points: [
         {
           type: "Public Objective",
-          id: "Sway the Council ",
+          id: "Sway the Council",
           roundClaimed: 3,
           score: 1
         }
