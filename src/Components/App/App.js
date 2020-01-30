@@ -7,6 +7,8 @@ import EditPage from "../EditPage";
 import api from "../../Utils/api";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+import mockData from "../../Utils/mockData";
+
 const Wrapper = styled.div`
   text-align: center;
 `;
@@ -14,7 +16,8 @@ const Wrapper = styled.div`
 export default class App extends React.Component {
   state = {
     loginError: null,
-    game: null
+    // game: null
+    game: mockData.TEMP_GAME_DATA
   };
 
   addPlayer = player => {
