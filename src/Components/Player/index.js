@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import helpers from "../../Utils/helpers";
+import TechBar from "../TechBar";
 
 const Wrapper = styled.div`
   border: 1px black solid;
   border-radius: 5px;
   display: grid;
   grid-template-columns: 4fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "name name points" "faction . .";
+  grid-template-rows: 1fr 1fr auto;
+  grid-template-areas: "name name points" "faction faction ." "tech tech tech";
   width: 200px;
   margin: 10px auto;
 `;
@@ -29,20 +31,22 @@ const Points = styled.div`
   background-color: white;
 `;
 
-export default function Player(props) {
-  const { name, faction, points } = props.data;
+const TechContainer = styled.div`
+  grid-area: tech;
+`;
 
+export default function Player(props) {
+  const { name, faction, points, tech } = props.data;
   return (
     <Wrapper>
       <Name>{name}</Name>
-      <Faction>{faction}</Faction>
-      <Points>
-        {points.length > 0
-          ? points
-              .map(value => value.score)
-              .reduce((accumulator, currentValue) => accumulator + currentValue)
-          : 0}
-      </Points>
+      <Faction>{helpers.getFactionById(faction).name}</Faction>
+      <Points>{helpers.calculatePoints(points)}</Points>
+      <TechContainer>
+        {tech.map((id, index) => (
+          <TechBar tech={helpers.getTechById(id)} key={index} />
+        ))}
+      </TechContainer>
     </Wrapper>
   );
 }

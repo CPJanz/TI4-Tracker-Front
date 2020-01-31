@@ -1,5 +1,4 @@
-const tiObject = 
-  {
+const tiObject = {
     tech: [
         {
             "id": 0,
@@ -1411,6 +1410,7 @@ const tiObject =
         }
     ]
 }
+
 
 
 export default tiObject;

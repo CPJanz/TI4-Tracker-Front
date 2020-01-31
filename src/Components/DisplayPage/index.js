@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Player from "../Player";
+import helpers from "../../Utils/helpers";
 
 const Wrapper = styled.div``;
 const PublicObjective = styled.div``;
@@ -15,29 +16,26 @@ const Bubble = styled.span`
 const PlayersWhoCompleted = (players, objective) => {
   return players.filter(player => {
     const objectiveNames = player.points.map(objective => objective.id);
-    console.log(player.name);
-    console.log("objective", objective);
-    console.log("objectiveNames", objectiveNames);
     return objectiveNames.includes(objective);
   });
 };
 
 export default function DisplayPage(props) {
-  const { id, players, round, publicObjectives } = props.gameData;
+  const { players, publicObjectives } = props.gameData;
 
   return (
     <Wrapper>
       <h3>Public Objectives</h3>
       {publicObjectives.map((objective, index) => (
         <PublicObjective key={index}>
-          {objective.id}
-          {PlayersWhoCompleted(players, objective.id).map(player => (
-            <Bubble>{player.name}</Bubble>
+          {helpers.getObjectiveById(objective.id).name}
+          {PlayersWhoCompleted(players, objective.id).map((player, index) => (
+            <Bubble key={index}>{player.name}</Bubble>
           ))}
         </PublicObjective>
       ))}
-      {players.map(player => (
-        <Player data={player} />
+      {players.map((player, index) => (
+        <Player data={player} key={index} />
       ))}
     </Wrapper>
   );
