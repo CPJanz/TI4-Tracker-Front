@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import helpers from "../../Utils/helpers";
-import TechBar from "../TechBar";
+import FactionCard from "../FactionCard";
 import TechCard from "../TechCard";
 import Icon from "../Icon";
 
@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   border-radius: 5px;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr auto;
+  grid-template-rows: 1fr auto auto;
   grid-template-areas: "icon name name points" "icon faction faction ." "tech tech tech tech";
   width: 300px;
   margin: 10px auto;
@@ -51,7 +51,9 @@ export default function Player(props) {
       <IconContainer>
         <Icon iconFile={factionObject.iconname} size={43} />
       </IconContainer>
-      <Faction>{factionObject.name}</Faction>
+      <Faction>
+        <FactionCard faction={factionObject} />
+      </Faction>
       <Points>{helpers.calculatePoints(points)}</Points>
       <TechContainer>
         {tech.map((id, index) => (
