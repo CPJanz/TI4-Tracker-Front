@@ -16,6 +16,29 @@ const helpers = {
     return objectiveArray.reduce((total, objective) => {
       return total + this.getObjectiveById(objective.id).pointvalue;
     }, 0);
+  },
+
+  getIconsByRequiresString: requiresString => {
+    const requiresIcons = [];
+    requiresString.split("").forEach(icon => {
+      switch (icon) {
+        case "Y":
+          requiresIcons.push("Cybernetic.png");
+          break;
+        case "B":
+          requiresIcons.push("Propulsion.png");
+          break;
+        case "R":
+          requiresIcons.push("Warfare.png");
+          break;
+        case "G":
+          requiresIcons.push("Biotic.png");
+          break;
+        default:
+          break;
+      }
+    });
+    return requiresIcons;
   }
 };
 

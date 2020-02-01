@@ -1,37 +1,18 @@
 import React from "react";
 import styled from "styled-components";
-import greenIcon from "../../Icons/Biotic.png";
-import yellowIcon from "../../Icons/Cybernetic.png";
-import redIcon from "../../Icons/Warfare.png";
-import blueIcon from "../../Icons/Propulsion.png";
-
-const getIconFile = type => {
-  switch (type) {
-    case "Green":
-      return greenIcon;
-
-    case "Red":
-      return redIcon;
-
-    case "Blue":
-      return blueIcon;
-
-    case "Yellow":
-      return yellowIcon;
-    default:
-      return null;
-  }
-};
 
 const Wrapper = styled.span`
-  height: 17px;
-  width: 17px;
+  & img {
+    height: ${props => `${props.size}px`};
+    width: ${props => `${props.size}px`};
+  }
 `;
 
-export default function Icon(prop) {
-  const { type } = prop;
-  const iconFile = getIconFile(type);
+export default function Icon(props) {
+  const { iconFile, size } = props;
   return (
-    <Wrapper>{iconFile && <img src={iconFile} alt={`${type}-icon`} />}</Wrapper>
+    <Wrapper size={size || 20}>
+      {iconFile && <img src={`/Icons/${iconFile}`} alt={`icon`} />}
+    </Wrapper>
   );
 }

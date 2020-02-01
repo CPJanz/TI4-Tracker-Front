@@ -19,7 +19,7 @@ const mockData = {
             roundClaimed: 3
           }
         ],
-        tech: [1, 2, 5]
+        tech: [1, 2, 5, 11]
       },
       {
         name: "Sean",

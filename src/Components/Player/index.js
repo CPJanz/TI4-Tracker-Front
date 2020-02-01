@@ -2,15 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import helpers from "../../Utils/helpers";
 import TechBar from "../TechBar";
+import TechCard from "../TechCard";
+import Icon from "../Icon";
 
 const Wrapper = styled.div`
   border: 1px black solid;
   border-radius: 5px;
   display: grid;
-  grid-template-columns: 4fr 1fr 1fr;
+  grid-template-columns: 1fr 3fr 1fr 1fr;
   grid-template-rows: 1fr 1fr auto;
-  grid-template-areas: "name name points" "faction faction ." "tech tech tech";
-  width: 200px;
+  grid-template-areas: "icon name name points" "icon faction faction ." "tech tech tech tech";
+  width: 300px;
   margin: 10px auto;
 `;
 const Name = styled.div`
@@ -31,20 +33,30 @@ const Points = styled.div`
   background-color: white;
 `;
 
+const IconContainer = styled.div`
+  grid-area: icon;
+  padding: 3px;
+`;
+
 const TechContainer = styled.div`
   grid-area: tech;
 `;
 
 export default function Player(props) {
   const { name, faction, points, tech } = props.data;
+  const factionObject = helpers.getFactionById(faction);
   return (
     <Wrapper>
       <Name>{name}</Name>
-      <Faction>{helpers.getFactionById(faction).name}</Faction>
+      <IconContainer>
+        <Icon iconFile={factionObject.iconname} size={43} />
+      </IconContainer>
+      <Faction>{factionObject.name}</Faction>
       <Points>{helpers.calculatePoints(points)}</Points>
       <TechContainer>
         {tech.map((id, index) => (
-          <TechBar tech={helpers.getTechById(id)} key={index} />
+          // <TechBar tech={helpers.getTechById(id)} key={index} />
+          <TechCard tech={helpers.getTechById(id)} key={index} />
         ))}
       </TechContainer>
     </Wrapper>

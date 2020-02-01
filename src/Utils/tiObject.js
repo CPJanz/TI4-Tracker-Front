@@ -1,12 +1,13 @@
 const tiObject = {
-    tech: [
+    "tech": [
         {
             "id": 0,
             "name": "Neural Motivator",
             "text": "During the status phase, draw 2 action cards instead of 1",
             "requires": "N",
             "faction": -1,
-            "type": 0
+            "type": 0,
+            "iconname": "Biotic.png"
         },
         {
             "id": 1,
@@ -14,7 +15,8 @@ const tiObject = {
             "text": "After you win a ground combat, you may place 1 infantry from your reinforcements on that planet",
             "requires": "G",
             "faction": -1,
-            "type": 0
+            "type": 0,
+            "iconname": "Biotic.png"
         },
         {
             "id": 2,
@@ -22,7 +24,8 @@ const tiObject = {
             "text": "During the status phase, gain 3 command tokens instead of 2",
             "requires": "GG",
             "faction": -1,
-            "type": 0
+            "type": 0,
+            "iconname": "Biotic.png"
         },
         {
             "id": 3,
@@ -30,7 +33,8 @@ const tiObject = {
             "text": "ACTION: Exhaust this card and choose 1 planet in a system that contains 1 or more of your ships that have BOMBARDMENT; destroy all infantry on that planet",
             "requires": "GGG",
             "faction": -1,
-            "type": 0
+            "type": 0,
+            "iconname": "Biotic.png"
         },
         {
             "id": 4,
@@ -38,7 +42,8 @@ const tiObject = {
             "text": "At the end of the status phase, you may remove any number of infantry from planets you control and place them on 1 or more planets you control in the same or adjacent systems.",
             "requires": "GG",
             "faction": 0,
-            "type": 0
+            "type": 0,
+            "iconname": "Biotic.png"
         },
         {
             "id": 5,
@@ -46,7 +51,8 @@ const tiObject = {
             "text": "ACTION: Exhaust this card and spend 1 token from your strategy pool to gain 4 trade goods and choose 1 other player; that player gains 2 trade goods.",
             "requires": "GG",
             "faction": 4,
-            "type": 0
+            "type": 0,
+            "iconname": "Biotic.png"
         },
         {
             "id": 6,
@@ -54,7 +60,8 @@ const tiObject = {
             "text": "After another player activates a system that contains 1 or more of your ships, that player removes 1 token from his fleet pool and returns it to his reinforcements.",
             "requires": "GGG",
             "faction": 9,
-            "type": 0
+            "type": 0,
+            "iconname": "Biotic.png"
         },
         {
             "id": 7,
@@ -62,7 +69,8 @@ const tiObject = {
             "text": "You may exhaust this card and spend 1 token from your strategy pool when another player plays an action card; cancel that action card.",
             "requires": "G",
             "faction": 14,
-            "type": 0
+            "type": 0,
+            "iconname": "Biotic.png"
         },
         {
             "id": 8,
@@ -70,7 +78,8 @@ const tiObject = {
             "text": "After 1 or more of your units use Production, place 1 infantry from your reinforcements on a planet you control in that system.",
             "requires": "GG",
             "faction": 15,
-            "type": 0
+            "type": 0,
+            "iconname": "Biotic.png"
         },
         {
             "id": 9,
@@ -78,7 +87,8 @@ const tiObject = {
             "text": "During your turn of the action phase, players that have passed cannot play action cards.",
             "requires": "G",
             "faction": 16,
-            "type": 0
+            "type": 0,
+            "iconname": "Biotic.png"
         },
         {
             "id": 10,
@@ -86,15 +96,17 @@ const tiObject = {
             "text": "ACTION: Exhaust this card to look at another player's hand of action cards.  Choose 1 of those cards and add it to your hand.",
             "requires": "GGG",
             "faction": 16,
-            "type": 0
+            "type": 0,
+            "iconname": "Biotic.png"
         },
         {
             "id": 11,
             "name": "Antimass Deflectors",
-            "text": "Your ships can move into and through asteroid fields.///When other players’ units use SPACE CANNON against your units, apply -1 to the result of each die roll",
+            "text": "Your ships can move into and through asteroid fields. /// When other players' units use SPACE CANNON against your units, apply -1 to the result of each die roll.",
             "requires": "N",
             "faction": -1,
-            "type": 1
+            "type": 1,
+            "iconname": "Propulsion.png"
         },
         {
             "id": 12,
@@ -102,7 +114,8 @@ const tiObject = {
             "text": "After you activate a system, apply +1 to the move value of 1 of your ships during this tactical action",
             "requires": "B",
             "faction": -1,
-            "type": 1
+            "type": 1,
+            "iconname": "Propulsion.png"
         },
         {
             "id": 13,
@@ -110,7 +123,8 @@ const tiObject = {
             "text": "During each of your turns of the action phase, you may perform 2 actions instead of 1",
             "requires": "BB",
             "faction": -1,
-            "type": 1
+            "type": 1,
+            "iconname": "Propulsion.png"
         },
         {
             "id": 14,
@@ -118,7 +132,8 @@ const tiObject = {
             "text": "Your ships can move through systems that contain other player’s ships",
             "requires": "BBB",
             "faction": -1,
-            "type": 1
+            "type": 1,
+            "iconname": "Propulsion.png"
         },
         {
             "id": 15,
@@ -126,7 +141,8 @@ const tiObject = {
             "text": "Other players cannot activate asteroid fields that contain 1 or more of your ships. /// At the start of your turn during the action phase, you may produce 1 unit in a system that contains at least 1 of your units that has Production.",
             "requires": "B",
             "faction": 2,
-            "type": 1
+            "type": 1,
+            "iconname": "Propulsion.png"
         },
         {
             "id": 16,
@@ -134,7 +150,8 @@ const tiObject = {
             "text": "At the start of the status phase, place or move a Creuss wormhole token into either a system that contains a planet you control or a non-home system that does not contain another player's ships.",
             "requires": "BB",
             "faction": 6,
-            "type": 1
+            "type": 1,
+            "iconname": "Propulsion.png"
         },
         {
             "id": 17,
@@ -142,7 +159,8 @@ const tiObject = {
             "text": "You may exhaust this card after you activate a system that contains 1 or more of your units; that system is adjacent to all other systems that contain 1 or more of your units during this activation.",
             "requires": "BB",
             "faction": 12,
-            "type": 1
+            "type": 1,
+            "iconname": "Propulsion.png"
         },
         {
             "id": 18,
@@ -150,7 +168,8 @@ const tiObject = {
             "text": "During your tactical actions, if you do not control Mecatol Rex, treat its systems as if it has both an α and β wormhole. [Exhaust] ACTION: If you control Mecatol Rex, place 1 infantry from reinforcements on it.",
             "requires": "BB",
             "faction": 13,
-            "type": 1
+            "type": 1,
+            "iconname": "Propulsion.png"
         },
         {
             "id": 19,
@@ -158,7 +177,8 @@ const tiObject = {
             "text": "When 1 or more of your units use Production, reduce the combined cost of the produced units by 1",
             "requires": "N",
             "faction": -1,
-            "type": 2
+            "type": 2,
+            "iconname": "Cybernetic.png"
         },
         {
             "id": 20,
@@ -166,7 +186,8 @@ const tiObject = {
             "text": "You may exhaust this card before 1 or more of your units uses Space Cannon; hits produced by those units must be assigned to non-fighter ships if able",
             "requires": "Y",
             "faction": -1,
-            "type": 2
+            "type": 2,
+            "iconname": "Cybernetic.png"
         },
         {
             "id": 21,
@@ -174,7 +195,8 @@ const tiObject = {
             "text": "You may exhaust this card at the start of your turn during the action phase; remove up to 4 of your ground forces from the game board and place them on 1 or more planets you control.",
             "requires": "YY",
             "faction": -1,
-            "type": 2
+            "type": 2,
+            "iconname": "Cybernetic.png"
         },
         {
             "id": 22,
@@ -182,7 +204,8 @@ const tiObject = {
             "text": "After you gain control of a planet, you may produce any number of units on that planet that have a combined cost equal to or less than that planet’s resource value.",
             "requires": "YYY",
             "faction": -1,
-            "type": 2
+            "type": 2,
+            "iconname": "Cybernetic.png"
         },
         {
             "id": 23,
@@ -190,7 +213,8 @@ const tiObject = {
             "text": "During an invasion, units cannot use Space Cannon against your units.",
             "requires": "Y",
             "faction": 1,
-            "type": 2
+            "type": 2,
+            "iconname": "Cybernetic.png"
         },
         {
             "id": 24,
@@ -198,7 +222,8 @@ const tiObject = {
             "text": "At the end of the strategy phase, you may spend 1 token from your strategy pool and give another player 3 of your trade goods.  If you do, give 1 of your strategy cards to that player and take 1 of his strategy cards.",
             "requires": "YYY",
             "faction": 4,
-            "type": 2
+            "type": 2,
+            "iconname": "Cybernetic.png"
         },
         {
             "id": 25,
@@ -206,7 +231,8 @@ const tiObject = {
             "text": "You may exhaust this card and spend 2 resources when you research a technology; ignore all of that technology's prerequisites.",
             "requires": "YY",
             "faction": 7,
-            "type": 2
+            "type": 2,
+            "iconname": "Cybernetic.png"
         },
         {
             "id": 26,
@@ -214,7 +240,8 @@ const tiObject = {
             "text": "After you win or lose a space combat, gain 1 trade good; if you won the combat, you may also produce 1 ship in that system of any ship type that was destroyed during the combat.",
             "requires": "YY",
             "faction": 8,
-            "type": 2
+            "type": 2,
+            "iconname": "Cybernetic.png"
         },
         {
             "id": 27,
@@ -222,7 +249,8 @@ const tiObject = {
             "text": "When you spend trade goods, each trade good is worth 2 resources or influence instead of 1.",
             "requires": "YYY",
             "faction": 8,
-            "type": 2
+            "type": 2,
+            "iconname": "Cybernetic.png"
         },
         {
             "id": 28,
@@ -230,7 +258,8 @@ const tiObject = {
             "text": "After another player activates a system that contains 1 or more of your ships, gain 4 trade goods.",
             "requires": "YY",
             "faction": 12,
-            "type": 2
+            "type": 2,
+            "iconname": "Cybernetic.png"
         },
         {
             "id": 29,
@@ -238,7 +267,8 @@ const tiObject = {
             "text": "Exhaust this card when 1 or more of your units use PRODUCTION; swap the resource and influence values of 1 planet you control until the end of your turn.",
             "requires": "YY",
             "faction": 13,
-            "type": 2
+            "type": 2,
+            "iconname": "Cybernetic.png"
         },
         {
             "id": 30,
@@ -246,7 +276,8 @@ const tiObject = {
             "text": "At the start of a space combat, you may destroy 1 of your cruisers or destroyers in the active system to produce 1 hit against your opponent's ships; that hit must be assigned by your opponent to 1 of his non-fighters ships if able.",
             "requires": "YY",
             "faction": 15,
-            "type": 2
+            "type": 2,
+            "iconname": "Cybernetic.png"
         },
         {
             "id": 31,
@@ -254,7 +285,8 @@ const tiObject = {
             "text": "When 1 or more of your units use Bombardment or Space Cannon, 1 of those rolls may roll 1 additional die",
             "requires": "N",
             "faction": -1,
-            "type": 3
+            "type": 3,
+            "iconname": "Warfare.png"
         },
         {
             "id": 32,
@@ -262,7 +294,8 @@ const tiObject = {
             "text": "You may exhaust this card at the start of a round of ground combat on a planet that contains 1 or more of your units that have Planetary Shield; your opponent cannot make combat rolls this combat round.",
             "requires": "R",
             "faction": -1,
-            "type": 3
+            "type": 3,
+            "iconname": "Warfare.png"
         },
         {
             "id": 33,
@@ -270,7 +303,8 @@ const tiObject = {
             "text": "During each combat round, after you assign hits to your units, repair 1 of your damaged units that did not use Sustain Damage during this combat round",
             "requires": "RR",
             "faction": -1,
-            "type": 3
+            "type": 3,
+            "iconname": "Warfare.png"
         },
         {
             "id": 34,
@@ -278,7 +312,8 @@ const tiObject = {
             "text": "At the start of a space combat in a system that contains 3 or more of your non-fighter ships, your opponent must destroy 1 of his non-fighter ships",
             "requires": "RRR",
             "faction": -1,
-            "type": 3
+            "type": 3,
+            "iconname": "Warfare.png"
         },
         {
             "id": 35,
@@ -286,7 +321,8 @@ const tiObject = {
             "text": "When 1 of your units uses Sustain Damage, cancel 2 hits instead of 1.",
             "requires": "RR",
             "faction": 1,
-            "type": 3
+            "type": 3,
+            "iconname": "Warfare.png"
         },
         {
             "id": 36,
@@ -294,7 +330,8 @@ const tiObject = {
             "text": "Your ships can move into supernovas. /// After 1 or more of your units use Production in a system that either contains a war sun or is adjacent to a supernova, gain 1 trade good.",
             "requires": "RR",
             "faction": 3,
-            "type": 3
+            "type": 3,
+            "iconname": "Warfare.png"
         },
         {
             "id": 37,
@@ -302,7 +339,8 @@ const tiObject = {
             "text": "At the start of space combat in a system that contains a wormhole and 1 or more of your ships, you may produce 1 hit and assign it to 1 of your opponent's ships.",
             "requires": "R",
             "faction": 6,
-            "type": 3
+            "type": 3,
+            "iconname": "Warfare.png"
         },
         {
             "id": 38,
@@ -310,7 +348,8 @@ const tiObject = {
             "text": "After making combat rolls during a round of ground combat, if your opponent produced 1 or more hits, you produce 1 additional hit.",
             "requires": "RR",
             "faction": 11,
-            "type": 3
+            "type": 3,
+            "iconname": "Warfare.png"
         },
         {
             "id": 39,
@@ -487,7 +526,8 @@ const tiObject = {
             "text": "After another player activates a system that contains 1 or more of your ships, you may exhaust this card and spend 1 token from your strategy pool; immediately end that player's turn.",
             "requires": "YY",
             "faction": 14,
-            "type": 2
+            "type": 2,
+            "iconname": "Cybernetic.png"
         },
         {
             "id": 59,
@@ -498,7 +538,7 @@ const tiObject = {
             "type": 5
         }
     ],
-    factions: [
+    "factions": [
         {
             "id": 0,
             "name": "The Arborec",
@@ -508,7 +548,8 @@ const tiObject = {
             "flagship": 0,
             "factionunits": 11,
             "factiontech": "4,50",
-            "commodities": 3
+            "commodities": 3,
+            "iconname": "Arborec.png"
         },
         {
             "id": 1,
@@ -519,7 +560,8 @@ const tiObject = {
             "flagship": 1,
             "factionunits": -1,
             "factiontech": "23,35",
-            "commodities": 2
+            "commodities": 2,
+            "iconname": "Letnev.png"
         },
         {
             "id": 2,
@@ -530,7 +572,8 @@ const tiObject = {
             "flagship": 2,
             "factionunits": 14,
             "factiontech": "15,53",
-            "commodities": 3
+            "commodities": 3,
+            "iconname": "Saar.png"
         },
         {
             "id": 3,
@@ -541,7 +584,8 @@ const tiObject = {
             "flagship": 3,
             "factionunits": 16,
             "factiontech": "36,55",
-            "commodities": 4
+            "commodities": 4,
+            "iconname": "Muaat.png"
         },
         {
             "id": 4,
@@ -552,7 +596,8 @@ const tiObject = {
             "flagship": 4,
             "factionunits": -1,
             "factiontech": "5,24",
-            "commodities": 6
+            "commodities": 6,
+            "iconname": "Hacan.png"
         },
         {
             "id": 5,
@@ -563,7 +608,8 @@ const tiObject = {
             "flagship": 5,
             "factionunits": "1,10",
             "factiontech": "40,49",
-            "commodities": 4
+            "commodities": 4,
+            "iconname": "Sol.png"
         },
         {
             "id": 6,
@@ -574,7 +620,8 @@ const tiObject = {
             "flagship": 6,
             "factionunits": -1,
             "factiontech": "16,37",
-            "commodities": 4
+            "commodities": 4,
+            "iconname": "Creuss.png"
         },
         {
             "id": 7,
@@ -585,7 +632,8 @@ const tiObject = {
             "flagship": 7,
             "factionunits": 5,
             "factiontech": "25,44",
-            "commodities": 2
+            "commodities": 2,
+            "iconname": "L1Z1X.png"
         },
         {
             "id": 8,
@@ -596,7 +644,8 @@ const tiObject = {
             "flagship": 8,
             "factionunits": -1,
             "factiontech": "26,27",
-            "commodities": 2
+            "commodities": 2,
+            "iconname": "Mentak.png"
         },
         {
             "id": 9,
@@ -607,7 +656,8 @@ const tiObject = {
             "flagship": 9,
             "factionunits": 8,
             "factiontech": "6,47",
-            "commodities": 3
+            "commodities": 3,
+            "iconname": "Naalu.png"
         },
         {
             "id": 10,
@@ -618,7 +668,8 @@ const tiObject = {
             "flagship": 10,
             "factionunits": -1,
             "factiontech": "56,57",
-            "commodities": 3
+            "commodities": 3,
+            "iconname": "Nekro.png"
         },
         {
             "id": 11,
@@ -629,7 +680,8 @@ const tiObject = {
             "flagship": 11,
             "factionunits": 6,
             "factiontech": "38,45",
-            "commodities": 3
+            "commodities": 3,
+            "iconname": "Sardakk.png"
         },
         {
             "id": 12,
@@ -640,7 +692,8 @@ const tiObject = {
             "flagship": 12,
             "factionunits": -1,
             "factiontech": "17,28",
-            "commodities": 4
+            "commodities": 4,
+            "iconname": "Jol_Nar.png"
         },
         {
             "id": 13,
@@ -651,7 +704,8 @@ const tiObject = {
             "flagship": 13,
             "factionunits": -1,
             "factiontech": "18,29",
-            "commodities": 3
+            "commodities": 3,
+            "iconname": "Winnu.png"
         },
         {
             "id": 14,
@@ -662,7 +716,8 @@ const tiObject = {
             "flagship": 14,
             "factionunits": -1,
             "factiontech": "7,58",
-            "commodities": 4
+            "commodities": 4,
+            "iconname": "Xxcha.png"
         },
         {
             "id": 15,
@@ -673,7 +728,8 @@ const tiObject = {
             "flagship": 15,
             "factionunits": -1,
             "factiontech": "8,30",
-            "commodities": 2
+            "commodities": 2,
+            "iconname": "Yin.png"
         },
         {
             "id": 16,
@@ -684,10 +740,11 @@ const tiObject = {
             "flagship": 16,
             "factionunits": -1,
             "factiontech": "9,10",
-            "commodities": 3
+            "commodities": 3,
+            "iconname": "Yssaril.png"
         }
     ],
-    flagships: [
+    "flagships": [
         {
             "id": 0,
             "name": "Duha Menaimon",
@@ -842,7 +899,7 @@ const tiObject = {
             "ability": "This ship can move through systems that contain other player's ships.///Sustain Damage"
         }
     ],
-    tech_types: [
+    "tech_types": [
         {
             "id": 0,
             "name": "Green"
@@ -868,7 +925,7 @@ const tiObject = {
             "name": "Special"
         }
     ],
-    upgraded_units: [
+    "upgraded_units": [
         {
             "id": 0,
             "name": "Carrier II",
@@ -1023,7 +1080,7 @@ const tiObject = {
             "ability": "Other players units in a war sun's system lose their planetary shield.///Sustain Damage///Bombardment 3 (x3)"
         }
     ],
-    objectives: [
+    "objectives": [
         {
             "id": 0,
             "name": "Custodian Token",
@@ -1375,7 +1432,7 @@ const tiObject = {
             "type": 7
         }
     ],
-    objective_types: [
+    "objective_types": [
         {
             "id": 0,
             "name": "Mecatol Rex"

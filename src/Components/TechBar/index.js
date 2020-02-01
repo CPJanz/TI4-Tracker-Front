@@ -8,7 +8,7 @@ const Wrapper = styled.div`
     background: green;
   }
   &.Blue {
-    background: light-blue;
+    background: lightblue;
   }
   &.Yellow {
     background: yellow;
@@ -27,11 +27,11 @@ const Wrapper = styled.div`
 `;
 
 export default function TechBar(props) {
-  const { name, type } = props.tech;
+  const { name, type, iconname } = props.tech;
   const techType = helpers.getTechTypeById(type).name;
   return (
     <Wrapper className={techType}>
-      {name} <Icon type={techType} />
+      {name} <Icon iconFile={iconname} />
     </Wrapper>
   );
 }
