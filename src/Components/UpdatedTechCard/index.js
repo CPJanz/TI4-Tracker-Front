@@ -17,53 +17,61 @@ const Wrapper = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   border: 3px solid ${props => `${props.color}`};
-
+  border-radius: 10px;
+  overflowy: scroll;
+  margin: 10px;
   display: grid;
-  grid-template-columns: 40px 10px 195px 55px;
-  grid-template-rows: 10px 20px 5px 20px 95px 50px;
+  grid-template-columns: 250px 50px;
+  grid-template-rows: 50px 100px 50px;
   grid-template-areas:
-    "requires requires name  icon"
-    "requires-icons requires-icons name icon"
-    "requires-icons requires-icons .  icon"
-    "requires-icons requires-icons text icon"
-    "requires-icons requires-icons text ."
-    "unit unit unit unit";
+    "name  icon"
+    "text requires-icons"
+    "unit requires-icons";
 `;
 
 const NameArea = styled.div`
   grid-area: name;
-  border: yellow 1px solid;
+  border-bottom: yellow 1px solid;
   color: white;
   text-align: left;
   padding-left: 3px;
-  font-size: 18px;
+  font-size: 22px;
 `;
 
 const IconArea = styled.div`
   grid-area: icon;
-  border: white 1px solid;
+  border-bottom: yellow 1px solid;
+  border-left: yellow 1px solid;
   text-align: right;
   padding: 3px;
 `;
 
 const RequiresTitle = styled.div`
-  grid-area: requires;
+  grid-area: requires-icons;
   text-align: center;
   color: white;
   font-size: 11px;
-  line-height: 2.5;
+  border-left: yellow 1px solid;
 `;
 
 const RequiresList = styled.ul`
   grid-area: requires-icons;
   list-style: none;
   padding: 0;
-  border: red 1px solid;
+
+  border-left: yellow 1px solid;
 `;
 
 const TextArea = styled.div`
   grid-area: text;
   color: white;
+
+  & p {
+    margin: 0;
+    padding: 5px;
+    font-size: 12px;
+    text-align: left;
+  }
 `;
 
 const UnitArea = styled.div`
@@ -79,23 +87,25 @@ export default function UpdatedTechCard(props) {
       faction === -1 ? "" : "/Icons/" + helpers.getFactionById(faction).iconname
   };
 
-  console.log(iconname, helpers.getIconsByRequiresString(requires));
+  console.log(helpers.getTechTypeById(type).name.toLowerCase());
   return (
     <Wrapper {...styleProps}>
       <RequiresTitle>Requires:</RequiresTitle>
-      <NameArea>{name}</NameArea>
+      <NameArea color={styleProps.color}>{name}</NameArea>
       <IconArea>
         <Icon iconFile={iconname} size={40} />
       </IconArea>
       <RequiresList>
         {helpers.getIconsByRequiresString(requires).map((icon, index) => (
           <li key={index}>
-            <Icon iconFile={icon} size={30} />
+            <Icon iconFile={icon} size={28} />
           </li>
         ))}
       </RequiresList>
       <TextArea>
-        <p>{text}</p>
+        {helpers.splitString(text).map((line, index) => (
+          <p key={index}>{line}</p>
+        ))}
       </TextArea>
       {unitid && <UnitArea>Hello</UnitArea>}
     </Wrapper>

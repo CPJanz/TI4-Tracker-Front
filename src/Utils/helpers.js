@@ -1,7 +1,7 @@
 import tiObject from "./tiObject";
 const helpers = {
   splitString: unsplitString => {
-    return unsplitString.split("///");
+    return unsplitString.split("|||");
   },
 
   getObjectiveById: id => getGenericById(id, "objectives"),

@@ -102,7 +102,7 @@ const tiObject = {
         {
             "id": 11,
             "name": "Antimass Deflectors",
-            "text": "Your ships can move into and through asteroid fields. /// When other players' units use SPACE CANNON against your units, apply -1 to the result of each die roll.",
+            "text": "Your ships can move into and through asteroid fields. ||| When other players' units use SPACE CANNON against your units, apply -1 to the result of each die roll.",
             "requires": "N",
             "faction": -1,
             "type": 1,
@@ -138,7 +138,7 @@ const tiObject = {
         {
             "id": 15,
             "name": "Chaos Mapping",
-            "text": "Other players cannot activate asteroid fields that contain 1 or more of your ships. /// At the start of your turn during the action phase, you may produce 1 unit in a system that contains at least 1 of your units that has Production.",
+            "text": "Other players cannot activate asteroid fields that contain 1 or more of your ships. ||| At the start of your turn during the action phase, you may produce 1 unit in a system that contains at least 1 of your units that has Production.",
             "requires": "B",
             "faction": 2,
             "type": 1,
@@ -327,7 +327,7 @@ const tiObject = {
         {
             "id": 36,
             "name": "Magmus Reactor",
-            "text": "Your ships can move into supernovas. /// After 1 or more of your units use Production in a system that either contains a war sun or is adjacent to a supernova, gain 1 trade good.",
+            "text": "Your ships can move into supernovas. ||| After 1 or more of your units use Production in a system that either contains a war sun or is adjacent to a supernova, gain 1 trade good.",
             "requires": "RR",
             "faction": 3,
             "type": 3,
@@ -543,7 +543,7 @@ const tiObject = {
             "id": 0,
             "name": "The Arborec",
             "factionabilities": "Mitosis: Your space docks cannot produce infantry.  At the start of the status phase , place 1 infantry from your reinforcements on any planet you control.",
-            "promissorynote": "Stymie:///ACTION: Place this card face up in your play area.///While this card is in your play area, the Arborec player cannot produce units in or adjacent to non-home systems that contain 1 or more of your units.///If you activate a system that contains 1 or more of the Arborec player's units, return this card to the Arborec player.",
+            "promissorynote": "Stymie:|||ACTION: Place this card face up in your play area.|||While this card is in your play area, the Arborec player cannot produce units in or adjacent to non-home systems that contain 1 or more of your units.|||If you activate a system that contains 1 or more of the Arborec player's units, return this card to the Arborec player.",
             "startingtech": 32,
             "flagship": 0,
             "factionunits": 11,
@@ -554,8 +554,8 @@ const tiObject = {
         {
             "id": 1,
             "name": "The Barony of Letnev",
-            "factionabilities": "Munitions Reserves: At the start of each round of space combat, you may spend 2 trade goods;  you may re-roll any number of your dice during that combat round.///Armada: The maximum number of non-fighter ships you can have in each system is equal to 2 more than the number of tokens in your fleet pool.",
-            "promissorynote": "War Funding:///At the start of a round of space combat:///The Letnev player loses 2 trade goods.///During this combat round, re-roll any number of your dice.///Then, return this card to the Letnev player.",
+            "factionabilities": "Munitions Reserves: At the start of each round of space combat, you may spend 2 trade goods;  you may re-roll any number of your dice during that combat round.|||Armada: The maximum number of non-fighter ships you can have in each system is equal to 2 more than the number of tokens in your fleet pool.",
+            "promissorynote": "War Funding:|||At the start of a round of space combat:|||The Letnev player loses 2 trade goods.|||During this combat round, re-roll any number of your dice.|||Then, return this card to the Letnev player.",
             "startingtech": "11,31",
             "flagship": 1,
             "factionunits": -1,
@@ -566,8 +566,8 @@ const tiObject = {
         {
             "id": 2,
             "name": "The Clan of Saar",
-            "factionabilities": "Scavenge: After you gain control of a planet, gain 1 trade good.///Nomadic: You can score objectives even if you do not control the planets in your home system.",
-            "promissorynote": "Ragh's Call:///After you commit 1 or more units to land on a planet:///Remove all of the Saar player's ground forces from that planet and place them on a planet controlled by the Saar player.///Then return this card to the Saar player.",
+            "factionabilities": "Scavenge: After you gain control of a planet, gain 1 trade good.|||Nomadic: You can score objectives even if you do not control the planets in your home system.",
+            "promissorynote": "Ragh's Call:|||After you commit 1 or more units to land on a planet:|||Remove all of the Saar player's ground forces from that planet and place them on a planet controlled by the Saar player.|||Then return this card to the Saar player.",
             "startingtech": 11,
             "flagship": 2,
             "factionunits": 14,
@@ -578,8 +578,8 @@ const tiObject = {
         {
             "id": 3,
             "name": "The Embers of Muaat",
-            "factionabilities": "Star Forge: ACTION: Spend 1 token from your strategy pool to place either 2 fighters or 1 destroyer from your reinforcements in a system that contains 1 or more of your war suns.///Gashlai Physiology: Your ships can move through supernovas.",
-            "promissorynote": "Fires of the Gashlai:///ACTION: Remove 1 token from the Muaat player's fleet pool and return it to his reinforcements. Then, gain your war sun unit upgrade technology card.///Then, return this card to the Muaat player.",
+            "factionabilities": "Star Forge: ACTION: Spend 1 token from your strategy pool to place either 2 fighters or 1 destroyer from your reinforcements in a system that contains 1 or more of your war suns.|||Gashlai Physiology: Your ships can move through supernovas.",
+            "promissorynote": "Fires of the Gashlai:|||ACTION: Remove 1 token from the Muaat player's fleet pool and return it to his reinforcements. Then, gain your war sun unit upgrade technology card.|||Then, return this card to the Muaat player.",
             "startingtech": 31,
             "flagship": 3,
             "factionunits": 16,
@@ -590,8 +590,8 @@ const tiObject = {
         {
             "id": 4,
             "name": "The Emirates of Hacan",
-            "factionabilities": "Masters of Trade: You do not have to spend a command token to resolve the secondary ability of the \"Trade\" strategy card.///Guild Ships: You can negotiate transactions with players who are not your neighbor.///Arbiters: When you are negotiating a transaction, action cards can be exchanged as part of that transaction.",
-            "promissorynote": "Trade Convoys:///ACTION: Place this card face-up in your play area.///While this card is in your play area, you may negotiate transactions with players who are not your neighbor.///If you activate a system that contains 1 or more of the Hacan player's units, return this card to the Hacan player.",
+            "factionabilities": "Masters of Trade: You do not have to spend a command token to resolve the secondary ability of the \"Trade\" strategy card.|||Guild Ships: You can negotiate transactions with players who are not your neighbor.|||Arbiters: When you are negotiating a transaction, action cards can be exchanged as part of that transaction.",
+            "promissorynote": "Trade Convoys:|||ACTION: Place this card face-up in your play area.|||While this card is in your play area, you may negotiate transactions with players who are not your neighbor.|||If you activate a system that contains 1 or more of the Hacan player's units, return this card to the Hacan player.",
             "startingtech": "11,19",
             "flagship": 4,
             "factionunits": -1,
@@ -602,8 +602,8 @@ const tiObject = {
         {
             "id": 5,
             "name": "The Federation of Sol",
-            "factionabilities": "Orbital Drop: ACTION: Spend 1 token from your strategy pool to place 2 infantry from your reinforcements on 1 planet you control.///Versatile: When you gain command tokens during the status phase, gain 1 additional command token.",
-            "promissorynote": "Military Support:///At the start of the Sol player's turn:///Remove 1 token from the Sol player's strategy pool, if able, and return it to his reinforcements.  Then, you may place 2 infantry from your reinforcements on any planet you control.///Then return this card to the Sol player.",
+            "factionabilities": "Orbital Drop: ACTION: Spend 1 token from your strategy pool to place 2 infantry from your reinforcements on 1 planet you control.|||Versatile: When you gain command tokens during the status phase, gain 1 additional command token.",
+            "promissorynote": "Military Support:|||At the start of the Sol player's turn:|||Remove 1 token from the Sol player's strategy pool, if able, and return it to his reinforcements.  Then, you may place 2 infantry from your reinforcements on any planet you control.|||Then return this card to the Sol player.",
             "startingtech": "0,11",
             "flagship": 5,
             "factionunits": "1,10",
@@ -614,8 +614,8 @@ const tiObject = {
         {
             "id": 6,
             "name": "The Ghosts of Creuss",
-            "factionabilities": "Quantum Entanglement: You treat all systems that contain either an alpha or beta wormhole as adjacent to each other. Game effects cannot prevent you from using this ability.///Slipstream: During your tactical actions, apply +1 to the move value of each of your ships that starts its movement in your home system  or in a system that contains either an alpha or beta wormhole.///Creuss Gate: When you create the game board, place the Creuss Gate (tile 17) where your home system would normally be placed. The Creuss Gate system is not a home system. Then, place your home system (tile 51) in your play area.",
-            "promissorynote": "Creuss Iff:///At the start of your turn during the action phase:///Place or move a Creuss wormhole token into either a system that contains a planet you control or a non-home system that does not contain another player's ships.///Then, return this card to the Creuss player.",
+            "factionabilities": "Quantum Entanglement: You treat all systems that contain either an alpha or beta wormhole as adjacent to each other. Game effects cannot prevent you from using this ability.|||Slipstream: During your tactical actions, apply +1 to the move value of each of your ships that starts its movement in your home system  or in a system that contains either an alpha or beta wormhole.|||Creuss Gate: When you create the game board, place the Creuss Gate (tile 17) where your home system would normally be placed. The Creuss Gate system is not a home system. Then, place your home system (tile 51) in your play area.",
+            "promissorynote": "Creuss Iff:|||At the start of your turn during the action phase:|||Place or move a Creuss wormhole token into either a system that contains a planet you control or a non-home system that does not contain another player's ships.|||Then, return this card to the Creuss player.",
             "startingtech": 12,
             "flagship": 6,
             "factionunits": -1,
@@ -626,8 +626,8 @@ const tiObject = {
         {
             "id": 7,
             "name": "The L1Z1X Mindnet",
-            "factionabilities": "Assimilate: When you gain control of a planet, replace each PDS and space dock that is on that planet with a matching unit from your reinforcements.///Harrow: After each round of ground combat, your ships in the active system may use their Bombardment abilities against your opponent's ground forces on the planet.",
-            "promissorynote": "Cybernetic Enhancements:///At the start of your turn:///Remove 1 token from the L1Z1X player's strategy pool and return it to his reinforcements. Then, place 1 command token from your reinforcements in your strategy pool.///Then, return this card to the L1Z1X player.",
+            "factionabilities": "Assimilate: When you gain control of a planet, replace each PDS and space dock that is on that planet with a matching unit from your reinforcements.|||Harrow: After each round of ground combat, your ships in the active system may use their Bombardment abilities against your opponent's ground forces on the planet.",
+            "promissorynote": "Cybernetic Enhancements:|||At the start of your turn:|||Remove 1 token from the L1Z1X player's strategy pool and return it to his reinforcements. Then, place 1 command token from your reinforcements in your strategy pool.|||Then, return this card to the L1Z1X player.",
             "startingtech": "0,31",
             "flagship": 7,
             "factionunits": 5,
@@ -638,8 +638,8 @@ const tiObject = {
         {
             "id": 8,
             "name": "The Mentak Coalition",
-            "factionabilities": "Ambush: At the start of a space combat, you may roll 1 die for each of up to 2 of your cruisers or destroyers in the system.  For each result equal to or greater than that ship's combat value, produce 1 hit; your opponent must assign it to 1 of his ships.///Pillage: After 1 of your neighbors gains trade goods or resolves a transaction, if he has 3 or more trade goods, you may take 1 of his trade goods or commodities.",
-            "promissorynote": "Promise of Protection:///Action: Place this card face-up in your play area.///While this card is in your play area, the Mentak player cannot use their Pillage faction ability against you.///If you activate a system that contains 1 or more of the Mentak player's units, return this card to the Mentak player.",
+            "factionabilities": "Ambush: At the start of a space combat, you may roll 1 die for each of up to 2 of your cruisers or destroyers in the system.  For each result equal to or greater than that ship's combat value, produce 1 hit; your opponent must assign it to 1 of his ships.|||Pillage: After 1 of your neighbors gains trade goods or resolves a transaction, if he has 3 or more trade goods, you may take 1 of his trade goods or commodities.",
+            "promissorynote": "Promise of Protection:|||Action: Place this card face-up in your play area.|||While this card is in your play area, the Mentak player cannot use their Pillage faction ability against you.|||If you activate a system that contains 1 or more of the Mentak player's units, return this card to the Mentak player.",
             "startingtech": "19,31",
             "flagship": 8,
             "factionunits": -1,
@@ -650,8 +650,8 @@ const tiObject = {
         {
             "id": 9,
             "name": "The Naalu Collective",
-            "factionabilities": "Telepathic: At the end of the strategy phase, place the Naalu \"0\" token on your strategy card; you are first in initiative order.///Foresight: After another player moves ships into a system that contains 1 or more of your ships, you may place 1 token from your strategy pool in an adjacent system that does not contain another player's ships;  move your ships from the active system into that system.",
-            "promissorynote": "Gift of Prescience:///At the end of the strategy phase:///Place this card face-up in your play area and place the Naalu \"0\" token on your strategy card;  you are first in the initiative order.  The Naalu player cannot use his TELEPATHIC faction ability during this game round.///Return this card to the Naalu player at the end of the status phase.",
+            "factionabilities": "Telepathic: At the end of the strategy phase, place the Naalu \"0\" token on your strategy card; you are first in initiative order.|||Foresight: After another player moves ships into a system that contains 1 or more of your ships, you may place 1 token from your strategy pool in an adjacent system that does not contain another player's ships;  move your ships from the active system into that system.",
+            "promissorynote": "Gift of Prescience:|||At the end of the strategy phase:|||Place this card face-up in your play area and place the Naalu \"0\" token on your strategy card;  you are first in the initiative order.  The Naalu player cannot use his TELEPATHIC faction ability during this game round.|||Return this card to the Naalu player at the end of the status phase.",
             "startingtech": "0,19",
             "flagship": 9,
             "factionunits": 8,
@@ -662,8 +662,8 @@ const tiObject = {
         {
             "id": 10,
             "name": "The Nekro Virus",
-            "factionabilities": "Galactic Threat: You cannot vote on agendas.  Once per agenda phase, after an agenda is revealed, you may predict aloud the outcome of that agenda.  If your prediction is correct, gain 1 technology that is owned by a player who voted how you predicted.///Technological Singularity: Once per combat, after 1 of your opponent's units is destroyed, you may gain 1 technology that is owned by that player.///Propagation: You cannot research technology.  When you would research a technology, gain 3 command tokens instead.",
-            "promissorynote": "Antivirus:///At the start of combat:///Place this card face-up in your play area. While this card is in your play area, the Nekro player cannot use his TECHNOLOGICAL SINGULARITY faction ability against you.///If you activate a system that contains 1 or more of the Nekro player's units, return this card to the Nekro player.",
+            "factionabilities": "Galactic Threat: You cannot vote on agendas.  Once per agenda phase, after an agenda is revealed, you may predict aloud the outcome of that agenda.  If your prediction is correct, gain 1 technology that is owned by a player who voted how you predicted.|||Technological Singularity: Once per combat, after 1 of your opponent's units is destroyed, you may gain 1 technology that is owned by that player.|||Propagation: You cannot research technology.  When you would research a technology, gain 3 command tokens instead.",
+            "promissorynote": "Antivirus:|||At the start of combat:|||Place this card face-up in your play area. While this card is in your play area, the Nekro player cannot use his TECHNOLOGICAL SINGULARITY faction ability against you.|||If you activate a system that contains 1 or more of the Nekro player's units, return this card to the Nekro player.",
             "startingtech": "1,56,57",
             "flagship": 10,
             "factionunits": -1,
@@ -675,7 +675,7 @@ const tiObject = {
             "id": 11,
             "name": "The Sardakk N'orr",
             "factionabilities": "Unrelenting: Apply +1 to the result of each of your unit's combat rolls.",
-            "promissorynote": "Tekklar Legion:///At the start of an invasion combat:///Apply +1 to the result of each of your unit's combat rolls during this combat.  If your opponent is the N'orr player, apply -1 to the result of each of his unit's combat rolls during this combat.///Then, return this card to the N'orr player.",
+            "promissorynote": "Tekklar Legion:|||At the start of an invasion combat:|||Apply +1 to the result of each of your unit's combat rolls during this combat.  If your opponent is the N'orr player, apply -1 to the result of each of his unit's combat rolls during this combat.|||Then, return this card to the N'orr player.",
             "startingtech": -1,
             "flagship": 11,
             "factionunits": 6,
@@ -686,8 +686,8 @@ const tiObject = {
         {
             "id": 12,
             "name": "The Universities of Jol-Nar",
-            "factionabilities": "Fragile: Apply -1 to the result of each of your unit's combat rolls.///Brilliant: When you spend a command token to resolve the secondary ability of the \"Technology\" strategy card, you may resolve the primary ability instead.///Analytical: When you research a technology that is not a unit upgrade technology, you may ignore 1 prerequisite.",
-            "promissorynote": "Research Agreement:///After the Jol-Nar player researches a technology that is not a faction technology:///Gain that technology.///Then, return this card to the Jol-Nar player.",
+            "factionabilities": "Fragile: Apply -1 to the result of each of your unit's combat rolls.|||Brilliant: When you spend a command token to resolve the secondary ability of the \"Technology\" strategy card, you may resolve the primary ability instead.|||Analytical: When you research a technology that is not a unit upgrade technology, you may ignore 1 prerequisite.",
+            "promissorynote": "Research Agreement:|||After the Jol-Nar player researches a technology that is not a faction technology:|||Gain that technology.|||Then, return this card to the Jol-Nar player.",
             "startingtech": "0,11,19,31",
             "flagship": 12,
             "factionunits": -1,
@@ -698,8 +698,8 @@ const tiObject = {
         {
             "id": 13,
             "name": "The Winnu",
-            "factionabilities": "Blood Ties: You do not have to spend influence to remove the custodians token from Mecatol Rex.///Reclamation: After you resolve a tactical action during which you gained control of Mecatol Rex, you may place 1 PDS and 1 space dock from your reinforcements on Mecatol Rex.",
-            "promissorynote": "Acquiesence:///At the end of the strategy phase:///Exchange 1 of your strategy cards with a strategy card that was chosen by the Winnu player.///Then, return this card to the Winnu player.",
+            "factionabilities": "Blood Ties: You do not have to spend influence to remove the custodians token from Mecatol Rex.|||Reclamation: After you resolve a tactical action during which you gained control of Mecatol Rex, you may place 1 PDS and 1 space dock from your reinforcements on Mecatol Rex.",
+            "promissorynote": "Acquiesence:|||At the end of the strategy phase:|||Exchange 1 of your strategy cards with a strategy card that was chosen by the Winnu player.|||Then, return this card to the Winnu player.",
             "startingtech": 59,
             "flagship": 13,
             "factionunits": -1,
@@ -710,8 +710,8 @@ const tiObject = {
         {
             "id": 14,
             "name": "The Xxcha Kingdom",
-            "factionabilities": "Peace Accords: After you resolve the primary or secondary ability of the \"Diplomacy\" strategy card, you may gain control of 1 planet other than Mecatol Rex that does not contain any units and is in a system that is adjacent to a planet you control.///Quash: When an agenda is revealed, you may spend 1 token from your strategy pool to discard that agenda and reveal 1 agenda from the top of the deck.  Players vote on this agenda instead.",
-            "promissorynote": "Political Favor:///After an agenda is revealed:///Remove 1 token from the Xxcha player's strategy pool and return it to his reinforcements.  Then, discard the revealed agenda and reveal 1 agenda from the top of the deck.  Players vote on this agenda instead.///Then, return this card to the Xxcha player.",
+            "factionabilities": "Peace Accords: After you resolve the primary or secondary ability of the \"Diplomacy\" strategy card, you may gain control of 1 planet other than Mecatol Rex that does not contain any units and is in a system that is adjacent to a planet you control.|||Quash: When an agenda is revealed, you may spend 1 token from your strategy pool to discard that agenda and reveal 1 agenda from the top of the deck.  Players vote on this agenda instead.",
+            "promissorynote": "Political Favor:|||After an agenda is revealed:|||Remove 1 token from the Xxcha player's strategy pool and return it to his reinforcements.  Then, discard the revealed agenda and reveal 1 agenda from the top of the deck.  Players vote on this agenda instead.|||Then, return this card to the Xxcha player.",
             "startingtech": 20,
             "flagship": 14,
             "factionunits": -1,
@@ -722,8 +722,8 @@ const tiObject = {
         {
             "id": 15,
             "name": "The Yin Brotherhood",
-            "factionabilities": "Indoctrination: At the start of a ground combat, you may spend 2 influence to replace 1 of your opponent's participating infantry with 1 infantry from your reinforcements.///Devotion: After each space battle round, you may destroy 1 of your cruisers or destroyers in the active system to produce 1 hit and assign it to 1 of your opponent's ships in that system.",
-            "promissorynote": "Greyfire Mutagen:///After a system is activated:///The Yin player cannot use faction abilities or faction technology during this tactical action.///Then, return this card to the Yin player.",
+            "factionabilities": "Indoctrination: At the start of a ground combat, you may spend 2 influence to replace 1 of your opponent's participating infantry with 1 infantry from your reinforcements.|||Devotion: After each space battle round, you may destroy 1 of your cruisers or destroyers in the active system to produce 1 hit and assign it to 1 of your opponent's ships in that system.",
+            "promissorynote": "Greyfire Mutagen:|||After a system is activated:|||The Yin player cannot use faction abilities or faction technology during this tactical action.|||Then, return this card to the Yin player.",
             "startingtech": 19,
             "flagship": 15,
             "factionunits": -1,
@@ -734,8 +734,8 @@ const tiObject = {
         {
             "id": 16,
             "name": "The Yssaril Tribes",
-            "factionabilities": "Stall Tactics: ACTION: Discard 1 action card from your hand///Scheming: When you draw 1 or more action cards, draw 1 additional action card.  Then, choose and discard 1 action card from your hand.///Crafty: You can have any number of action cards in your hand.  Game effects cannot prevent you from using this ability.",
-            "promissorynote": "Spy Net:///At the start of your turn:///Look at the Yssaril player's hand of action cards.  Choose 1 of those cards and add it to your hand.///Then, return this card to the Yssaril player.",
+            "factionabilities": "Stall Tactics: ACTION: Discard 1 action card from your hand|||Scheming: When you draw 1 or more action cards, draw 1 additional action card.  Then, choose and discard 1 action card from your hand.|||Crafty: You can have any number of action cards in your hand.  Game effects cannot prevent you from using this ability.",
+            "promissorynote": "Spy Net:|||At the start of your turn:|||Look at the Yssaril player's hand of action cards.  Choose 1 of those cards and add it to your hand.|||Then, return this card to the Yssaril player.",
             "startingtech": 0,
             "flagship": 16,
             "factionunits": -1,
@@ -752,7 +752,7 @@ const tiObject = {
             "combat": "7 (x2)",
             "move": 1,
             "capacity": 5,
-            "ability": "After you activate this system, you may produce up to 5 units in this system.///Sustain Damage"
+            "ability": "After you activate this system, you may produce up to 5 units in this system.|||Sustain Damage"
         },
         {
             "id": 1,
@@ -761,7 +761,7 @@ const tiObject = {
             "combat": "5 (x2)",
             "move": 1,
             "capacity": 3,
-            "ability": "Other players' units in this system lose PLANETARY SHIELD.  At the start of each space combat round, repair this ship.///Sustain Damage///Bombardment 5 (x3)"
+            "ability": "Other players' units in this system lose PLANETARY SHIELD.  At the start of each space combat round, repair this ship.|||Sustain Damage|||Bombardment 5 (x3)"
         },
         {
             "id": 2,
@@ -770,7 +770,7 @@ const tiObject = {
             "combat": "5 (x2)",
             "move": 1,
             "capacity": 3,
-            "ability": "Sustain Damage///Anti-Fighter Barrage 6 (x4)"
+            "ability": "Sustain Damage|||Anti-Fighter Barrage 6 (x4)"
         },
         {
             "id": 3,
@@ -779,7 +779,7 @@ const tiObject = {
             "combat": "5 (x2)",
             "move": 1,
             "capacity": 3,
-            "ability": "ACTION: Spend 1 token from your strategy pool to place 1 cruiser in this unit's system.///Sustain Damage"
+            "ability": "ACTION: Spend 1 token from your strategy pool to place 1 cruiser in this unit's system.|||Sustain Damage"
         },
         {
             "id": 4,
@@ -788,7 +788,7 @@ const tiObject = {
             "combat": "7 (x2)",
             "move": 1,
             "capacity": 3,
-            "ability": "After you roll a die during a space combat in this system, you may spend 1 trade good to apply +1 to the result.///Sustain Damage"
+            "ability": "After you roll a die during a space combat in this system, you may spend 1 trade good to apply +1 to the result.|||Sustain Damage"
         },
         {
             "id": 5,
@@ -797,7 +797,7 @@ const tiObject = {
             "combat": "5 (x2)",
             "move": 1,
             "capacity": 12,
-            "ability": "At the end of the status phase, place 1 infantry from your reinforcements in this system's space area.///Sustain Damage"
+            "ability": "At the end of the status phase, place 1 infantry from your reinforcements in this system's space area.|||Sustain Damage"
         },
         {
             "id": 6,
@@ -806,7 +806,7 @@ const tiObject = {
             "combat": 5,
             "move": 1,
             "capacity": 3,
-            "ability": "This ship's system contains a delta wormhole. During movement, this ship may move before or after your other ships.///Sustain Damage"
+            "ability": "This ship's system contains a delta wormhole. During movement, this ship may move before or after your other ships.|||Sustain Damage"
         },
         {
             "id": 7,
@@ -815,7 +815,7 @@ const tiObject = {
             "combat": "5 (x2)",
             "move": 1,
             "capacity": 5,
-            "ability": "During a space combat, hits produced by this ship and by your dreadnoughts in this system must be assigned to non-fighter ships if able.///Sustain Damage"
+            "ability": "During a space combat, hits produced by this ship and by your dreadnoughts in this system must be assigned to non-fighter ships if able.|||Sustain Damage"
         },
         {
             "id": 8,
@@ -824,7 +824,7 @@ const tiObject = {
             "combat": "7 (x2)",
             "move": 1,
             "capacity": 3,
-            "ability": "Other players' ships in this system cannot use Sustain Damage.///Sustain Damage"
+            "ability": "Other players' ships in this system cannot use Sustain Damage.|||Sustain Damage"
         },
         {
             "id": 9,
@@ -833,7 +833,7 @@ const tiObject = {
             "combat": "9 (X2)",
             "move": 1,
             "capacity": 6,
-            "ability": "During an invasion in this system, you may commit fighters to planets as if they were ground forces. When combat ends, return those units to the space area.///Sustain Damage"
+            "ability": "During an invasion in this system, you may commit fighters to planets as if they were ground forces. When combat ends, return those units to the space area.|||Sustain Damage"
         },
         {
             "id": 10,
@@ -842,7 +842,7 @@ const tiObject = {
             "combat": "9 (X2)",
             "move": 1,
             "capacity": 3,
-            "ability": "At the start of a space combat, choose any number of your ground forces in this system to participate in that combat as if they were ships.///Sustain Damage"
+            "ability": "At the start of a space combat, choose any number of your ground forces in this system to participate in that combat as if they were ships.|||Sustain Damage"
         },
         {
             "id": 11,
@@ -851,7 +851,7 @@ const tiObject = {
             "combat": "6 (X2)",
             "move": 1,
             "capacity": 3,
-            "ability": "Apply +1 to the result of each of your other ship's combat rolls in this system.///Sustain Damage"
+            "ability": "Apply +1 to the result of each of your other ship's combat rolls in this system.|||Sustain Damage"
         },
         {
             "id": 12,
@@ -860,7 +860,7 @@ const tiObject = {
             "combat": "6 (X2)",
             "move": 1,
             "capacity": 3,
-            "ability": "When making a combat roll for this ship, each result of 9 or 10, before applying modifiers, produces 2 additional hits.///Sustain Damage"
+            "ability": "When making a combat roll for this ship, each result of 9 or 10, before applying modifiers, produces 2 additional hits.|||Sustain Damage"
         },
         {
             "id": 13,
@@ -869,7 +869,7 @@ const tiObject = {
             "combat": "7 (x?)",
             "move": 1,
             "capacity": 3,
-            "ability": "When this unit makes a combat roll, it rolls a number of dice equal to the number of your opponent's non-fighter ships in this system.///Sustain Damage"
+            "ability": "When this unit makes a combat roll, it rolls a number of dice equal to the number of your opponent's non-fighter ships in this system.|||Sustain Damage"
         },
         {
             "id": 14,
@@ -878,7 +878,7 @@ const tiObject = {
             "combat": "7 (x2)",
             "move": 1,
             "capacity": 3,
-            "ability": "You may use this unit's SPACE CANNON against ships that are in adjacent systems.///Space Cannon 5 (x3)///Sustain Damage"
+            "ability": "You may use this unit's SPACE CANNON against ships that are in adjacent systems.|||Space Cannon 5 (x3)|||Sustain Damage"
         },
         {
             "id": 15,
@@ -887,7 +887,7 @@ const tiObject = {
             "combat": "9 (X2)",
             "move": 1,
             "capacity": 3,
-            "ability": "When this ship is destroyed, destroy all ships in this system.///Sustain Damage"
+            "ability": "When this ship is destroyed, destroy all ships in this system.|||Sustain Damage"
         },
         {
             "id": 16,
@@ -896,7 +896,7 @@ const tiObject = {
             "combat": "5 (x2)",
             "move": 2,
             "capacity": 3,
-            "ability": "This ship can move through systems that contain other player's ships.///Sustain Damage"
+            "ability": "This ship can move through systems that contain other player's ships.|||Sustain Damage"
         }
     ],
     "tech_types": [
@@ -942,7 +942,7 @@ const tiObject = {
             "combat": 9,
             "move": 2,
             "capacity": 8,
-            "ability": "Advanced Carrier IIs are faster and have a larger capacity than Advanced Carriers.///Sustain Damage"
+            "ability": "Advanced Carrier IIs are faster and have a larger capacity than Advanced Carriers.|||Sustain Damage"
         },
         {
             "id": 2,
@@ -960,7 +960,7 @@ const tiObject = {
             "combat": 8,
             "move": 2,
             "capacity": 0,
-            "ability": "The Destroyer II is stronger in general combat and has an improved anti-fighter barrage.///Anti-Fighter Barrage 6 (x3)"
+            "ability": "The Destroyer II is stronger in general combat and has an improved anti-fighter barrage.|||Anti-Fighter Barrage 6 (x3)"
         },
         {
             "id": 4,
@@ -969,7 +969,7 @@ const tiObject = {
             "combat": 5,
             "move": 2,
             "capacity": 1,
-            "ability": "\"Direct Hit\" cards are no longer effective against this type of ship.///Sustain Damage///Bombardment 5"
+            "ability": "\"Direct Hit\" cards are no longer effective against this type of ship.|||Sustain Damage|||Bombardment 5"
         },
         {
             "id": 5,
@@ -978,7 +978,7 @@ const tiObject = {
             "combat": 4,
             "move": 2,
             "capacity": 2,
-            "ability": "\"Direct Hit\" cards are no longer effective against this type of ship.///Sustain Damage///Bombardment 4"
+            "ability": "\"Direct Hit\" cards are no longer effective against this type of ship.|||Sustain Damage|||Bombardment 4"
         },
         {
             "id": 6,
@@ -987,7 +987,7 @@ const tiObject = {
             "combat": 5,
             "move": 2,
             "capacity": 1,
-            "ability": "After a round of space comat, you may destroy this unit to destroy up to 2 ships in this system.///\"Direct Hit\" cards are no longer effective against this type of ship.///Sustain Damage///Bombardment 4 (x2)"
+            "ability": "After a round of space comat, you may destroy this unit to destroy up to 2 ships in this system.|||\"Direct Hit\" cards are no longer effective against this type of ship.|||Sustain Damage|||Bombardment 4 (x2)"
         },
         {
             "id": 7,
@@ -1032,7 +1032,7 @@ const tiObject = {
             "combat": 7,
             "move": 0,
             "capacity": 0,
-            "ability": "After this unit is destroyed in combat roll 1 die. On a result of 6 or greater place this unit on a planet you control in your home system at the start of your next turn.///Production 2"
+            "ability": "After this unit is destroyed in combat roll 1 die. On a result of 6 or greater place this unit on a planet you control in your home system at the start of your next turn.|||Production 2"
         },
         {
             "id": 12,
@@ -1041,7 +1041,7 @@ const tiObject = {
             "combat": 0,
             "move": 0,
             "capacity": 0,
-            "ability": "PDS IIs can fire their space cannons into adjacent systems.///Planetary Shield///Deep Space Cannon 5"
+            "ability": "PDS IIs can fire their space cannons into adjacent systems.|||Planetary Shield|||Deep Space Cannon 5"
         },
         {
             "id": 13,
@@ -1050,7 +1050,7 @@ const tiObject = {
             "combat": 0,
             "move": 0,
             "capacity": 0,
-            "ability": "Up to 3 fighters per space dock in a system a space dock is in do not count towards that system's fleet capacity.///Production (Planet +4)"
+            "ability": "Up to 3 fighters per space dock in a system a space dock is in do not count towards that system's fleet capacity.|||Production (Planet +4)"
         },
         {
             "id": 14,
@@ -1068,7 +1068,7 @@ const tiObject = {
             "combat": "3 (x3)",
             "move": 2,
             "capacity": 6,
-            "ability": "Other players units in a war sun's system lose their planetary shield.///Sustain Damage///Bombardment 3 (x3)"
+            "ability": "Other players units in a war sun's system lose their planetary shield.|||Sustain Damage|||Bombardment 3 (x3)"
         },
         {
             "id": 16,
@@ -1077,7 +1077,7 @@ const tiObject = {
             "combat": "3 (x3)",
             "move": 3,
             "capacity": 6,
-            "ability": "Other players units in a war sun's system lose their planetary shield.///Sustain Damage///Bombardment 3 (x3)"
+            "ability": "Other players units in a war sun's system lose their planetary shield.|||Sustain Damage|||Bombardment 3 (x3)"
         }
     ],
     "objectives": [
@@ -1427,7 +1427,7 @@ const tiObject = {
         {
             "id": 49,
             "name": "Support for the Throne",
-            "text": "When you recieve this card, if you are not the note's owner, you must place it face-up in your play area and gain 1 victory point.///If you activate a system that contains 1 or more of the owner's units, or if the owner is eliminated, lose 1 victory point and return this card to the owner.",
+            "text": "When you recieve this card, if you are not the note's owner, you must place it face-up in your play area and gain 1 victory point.|||If you activate a system that contains 1 or more of the owner's units, or if the owner is eliminated, lose 1 victory point and return this card to the owner.",
             "pointvalue": 1,
             "type": 7
         }
