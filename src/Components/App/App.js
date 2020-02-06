@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import CreateGame from "../CreateGame";
 import Login from "../LoginPage";
 import Nav from "../Nav";
 import DisplayPage from "../DisplayPage";
@@ -8,6 +9,7 @@ import api from "../../Utils/api";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import mockData from "../../Utils/mockData";
+import helpers from "../../Utils/helpers";
 
 const Wrapper = styled.div`
   text-align: center;
@@ -16,8 +18,9 @@ const Wrapper = styled.div`
 export default class App extends React.Component {
   state = {
     loginError: null,
-    // game: null
-    game: mockData.TEMP_GAME_DATA
+    gameError: null,
+    game: null,
+    preGamePlayers: [{ name: "", faction: 0 }]
   };
 
   addPlayer = player => {
@@ -26,7 +29,7 @@ export default class App extends React.Component {
     this.setState({ players: updatedList });
   };
 
-  startGame = () => {
+  createGame = () => {
     api.createGame.then(response =>
       response.gameCreated
         ? this.setState({ game: response.game, loginError: null })
@@ -44,36 +47,74 @@ export default class App extends React.Component {
     });
   };
 
+  startGame = () => {
+    api
+      .startGame(this.state.game.id, this.state.preGamePlayers)
+      .then(response => {
+        response.gameStarted
+          ? this.setState({ game: response.game, gameError: null })
+          : this.setState({
+              gameError: "There was an error starting the game"
+            });
+      });
+  };
+
   render() {
-    const { game, loginError } = this.state;
+    const { game, preGamePlayers, loginError } = this.state;
     console.log(game);
     return (
       <Wrapper>
-        {game === null ? (
+        {game === null && (
           <Login
-            startGameFn={this.startGame}
+            createGameFn={this.createGame}
             loginFn={id => this.fetchGame(id)}
             errorMessage={loginError}
           />
-        ) : (
-          <Router>
-            <header className="App-header">
-              <Nav game={game} />
-              <Switch>
-                <Route exact path="/login" component={Login} />
-                <Route
-                  path="/edit"
-                  render={() => <EditPage gameData={game} />}
-                />
-                <Route
-                  path="/"
-                  render={() => <DisplayPage gameData={game} />}
-                />
-                <Route render={() => <h1>404</h1>} />
-              </Switch>
-            </header>
-          </Router>
         )}
+        {game !== null && game.gameState === 0 && (
+          <CreateGame
+            players={preGamePlayers}
+            playerChangeNameFn={(playerIndex, name) => {
+              const preChangeArray = preGamePlayers;
+              preChangeArray[playerIndex].name = name;
+              this.setState({ preGamePlayers: preChangeArray });
+            }}
+            playerChangeFactionFn={(playerIndex, faction) => {
+              const preChangeArray = preGamePlayers;
+              preChangeArray[playerIndex].faction = faction;
+              this.setState({ preGamePlayers: preChangeArray });
+            }}
+            addNewPlayerFn={() => {
+              const preChangeArray = preGamePlayers;
+              preChangeArray.push({
+                name: "",
+                faction: 0
+              });
+              this.setState({ preGamePlayers: preChangeArray });
+            }}
+            removePlayerFn={playerIndex => {
+              const preChangeArray = preGamePlayers;
+              preChangeArray.splice(playerIndex, 1);
+              this.setState({ preGamePlayers: preChangeArray });
+            }}
+            startGameFn={() => this.startGame(game.id, preGamePlayers)}
+          />
+        )}
+        {game !== null && game.gameState === 1 && (
+          <DisplayPage gameData={game} />
+        )}
+        {/* <Router>
+          <header className="App-header">
+            <Nav game={game} />
+            <Switch>
+              <Route exact path="/login" component={Login} />
+              <Route path="/edit" render={() => <EditPage gameData={game} />} />
+              <Route path="/" render={() => <DisplayPage gameData={game} />} />
+              <Route render={() => <h1>404</h1>} />
+            </Switch>
+          </header>
+        </Router>
+        )})} */}
       </Wrapper>
     );
   }

@@ -1,5 +1,6 @@
 const mockData = {
   TEMP_GAME_DATA: {
+    gameState: 1,
     round: 3,
     publicObjectives: [
       { roundRevealed: 1, id: 1 },
@@ -36,6 +37,7 @@ const mockData = {
     id: "12345"
   },
   TEMP_NEW_GAME_DATA: {
+    gameState: 0,
     round: 0,
     publicObjectives: [],
     players: [],

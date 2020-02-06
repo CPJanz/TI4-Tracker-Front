@@ -40,7 +40,7 @@ export default class Login extends React.Component {
   state = { input: "" };
 
   render() {
-    const { loginFn, startGameFn, errorMessage } = this.props;
+    const { loginFn, createGameFn, errorMessage } = this.props;
     const { input } = this.state;
 
     return (
@@ -48,7 +48,7 @@ export default class Login extends React.Component {
         <Title>TI4 Tracker</Title>
         <div>
           <Instructions>Start a new game</Instructions>
-          <Button onClick={startGameFn}>Start</Button>
+          <Button onClick={createGameFn}>Start</Button>
         </div>
         <div>
           <Instructions>Join a game</Instructions>

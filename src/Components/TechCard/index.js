@@ -33,6 +33,9 @@ const CardHeader = styled.div`
   &.Unit {
     background: tan;
   }
+  &.Red {
+    background: red;
+  }
 
   & img {
     width: 17px;

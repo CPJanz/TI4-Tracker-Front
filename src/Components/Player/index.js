@@ -45,6 +45,7 @@ const TechContainer = styled.div`
 export default function Player(props) {
   const { name, faction, points, tech } = props.data;
   const factionObject = helpers.getFactionById(faction);
+  console.log(factionObject);
   return (
     <Wrapper>
       <Name>{name}</Name>
@@ -57,7 +58,6 @@ export default function Player(props) {
       <Points>{helpers.calculatePoints(points)}</Points>
       <TechContainer>
         {tech.map((id, index) => (
-          // <TechBar tech={helpers.getTechById(id)} key={index} />
           <TechCard tech={helpers.getTechById(id)} key={index} />
         ))}
       </TechContainer>

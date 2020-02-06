@@ -15,10 +15,14 @@ export default class FactionCard extends React.Component {
     const cardBody = (
       <CardBody>
         {helpers.splitString(faction.factionabilities).map((ability, index) => (
-          <div style={{ border: "1px black solid" }}>{ability}</div>
+          <div key={index} style={{ border: "1px black solid" }}>
+            {ability}
+          </div>
         ))}
         {helpers.splitString(faction.promissorynote).map((ability, index) => (
-          <div style={{ border: "1px black solid" }}>{ability}</div>
+          <div key={index} style={{ border: "1px black solid" }}>
+            {ability}
+          </div>
         ))}
       </CardBody>
     );
