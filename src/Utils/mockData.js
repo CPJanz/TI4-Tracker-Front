@@ -32,6 +32,61 @@ const mockData = {
           }
         ],
         tech: [3, 22, 45]
+      },
+      {
+        name: "Nick",
+        faction: 2,
+        points: [
+          {
+            id: 12,
+            roundClaimed: 2
+          },
+          {
+            id: 4,
+            roundClaimed: 3
+          }
+        ],
+        tech: [1]
+      },
+      {
+        name: "Joe",
+        faction: 3,
+        points: [
+          {
+            id: 1,
+            roundClaimed: 2
+          },
+          {
+            id: 4,
+            roundClaimed: 3
+          },
+          {
+            id: 12,
+            roundClaimed: 3
+          },
+          {
+            id: 35,
+            roundClaimed: 3
+          }
+        ],
+        tech: [1, 2, 5, 11]
+      },
+      {
+        name: "Alex",
+        faction: 4,
+        points: [],
+        tech: [1, 2, 5, 11]
+      },
+      {
+        name: "Josh",
+        faction: 5,
+        points: [
+          {
+            id: 1,
+            roundClaimed: 2
+          }
+        ],
+        tech: [1, 2, 5, 11]
       }
     ],
     id: "12345"

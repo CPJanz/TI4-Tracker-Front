@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import ScoreTrack from "../ScoreTrack";
 import { NavLink } from "react-router-dom";
 
 const Wrapper = styled.nav`
   position: static;
   top: 0;
   left: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
 `;
 
 const NavList = styled.ul`
@@ -30,29 +31,22 @@ const StyledNavLink = styled(NavLink)`
     color: red;
   }
 `;
+const GameDetails = styled.div`
+  width: 100%;
+  background: darkgrey;
+`;
 
 export default function Nav(props) {
-  const { id, round } = props.game;
+  const { id, round, players } = props.game;
 
   return (
     <Wrapper>
       {id && (
-        <p>
+        <GameDetails>
           Game Code {id} | Round {round}
-        </p>
+        </GameDetails>
       )}
-      <NavList>
-        <ListItem>
-          <StyledNavLink to="/edit" exact>
-            Edit
-          </StyledNavLink>
-        </ListItem>
-        <ListItem>
-          <StyledNavLink to="/" exact>
-            Display
-          </StyledNavLink>
-        </ListItem>
-      </NavList>
+      <ScoreTrack players={players} />
     </Wrapper>
   );
 }

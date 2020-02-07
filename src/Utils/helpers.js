@@ -46,6 +46,13 @@ const helpers = {
       "factions"
     ).startingtech.toString();
     return startingTech === "-1" ? [] : startingTech.split(",");
+  },
+  getScoreFromPlayerObj: playerObject => {
+    const result = playerObject.points.reduce((accumulator, currentValue) => {
+      let result = getGenericById(currentValue.id, "objectives").pointvalue;
+      return result + accumulator;
+    }, 0);
+    return result;
   }
 };
 

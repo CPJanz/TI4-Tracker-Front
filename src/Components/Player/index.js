@@ -47,7 +47,6 @@ const TechTitle = styled.div``;
 export default function Player(props) {
   const { name, faction, points, tech } = props.data;
   const factionObject = helpers.getFactionById(faction);
-  console.log(factionObject);
   return (
     <Wrapper>
       <Name>{name}</Name>

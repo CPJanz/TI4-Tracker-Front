@@ -19,7 +19,8 @@ export default class App extends React.Component {
   state = {
     loginError: null,
     gameError: null,
-    game: null,
+    // game: null,
+    game: mockData.TEMP_GAME_DATA,
     preGamePlayers: [{ name: "", faction: 0 }]
   };
 
@@ -61,7 +62,7 @@ export default class App extends React.Component {
 
   render() {
     const { game, preGamePlayers, loginError } = this.state;
-    console.log(game);
+    // console.log(game);
     return (
       <Wrapper>
         {game === null && (
@@ -101,7 +102,10 @@ export default class App extends React.Component {
           />
         )}
         {game !== null && game.gameState === 1 && (
-          <DisplayPage gameData={game} />
+          <React.Fragment>
+            <Nav game={game} />
+            <DisplayPage gameData={game} />
+          </React.Fragment>
         )}
         {/* <Router>
           <header className="App-header">
