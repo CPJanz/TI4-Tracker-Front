@@ -41,14 +41,18 @@ const helpers = {
     return requiresIcons;
   },
   getStartingTech: factionId => {
-    // console.log(getGenericById(factionId, "factions").startingtech);
-    return getGenericById(parseInt(factionId), "factions")
-      .startingtech.toString()
-      .split(",");
+    const startingTech = getGenericById(
+      parseInt(factionId),
+      "factions"
+    ).startingtech.toString();
+    return startingTech === "-1" ? [] : startingTech.split(",");
   }
 };
 
-const getGenericById = (id, type) =>
-  tiObject[type].find(element => parseInt(element.id) === parseInt(id));
+const getGenericById = (id, type) => {
+  return (
+    tiObject[type].find(element => parseInt(element.id) === parseInt(id)) || ""
+  );
+};
 
 export default helpers;

@@ -42,6 +42,8 @@ const TechContainer = styled.div`
   grid-area: tech;
 `;
 
+const TechTitle = styled.div``;
+
 export default function Player(props) {
   const { name, faction, points, tech } = props.data;
   const factionObject = helpers.getFactionById(faction);
@@ -57,6 +59,7 @@ export default function Player(props) {
       </Faction>
       <Points>{helpers.calculatePoints(points)}</Points>
       <TechContainer>
+        <TechTitle>Tech:</TechTitle>
         {tech.map((id, index) => (
           <TechCard tech={helpers.getTechById(id)} key={index} />
         ))}
