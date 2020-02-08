@@ -19,8 +19,8 @@ export default class App extends React.Component {
   state = {
     loginError: null,
     gameError: null,
-    // game: null,
-    game: mockData.TEMP_GAME_DATA,
+    game: null,
+    // game: mockData.TEMP_GAME_DATA,
     preGamePlayers: [{ name: "", faction: 0 }]
   };
 
@@ -30,39 +30,36 @@ export default class App extends React.Component {
     this.setState({ players: updatedList });
   };
 
-  createGame = () => {
-    api.createGame.then(response =>
-      response.gameCreated
-        ? this.setState({ game: response.game, loginError: null })
-        : this.setState({
-            loginError: "There was an error creating the game"
-          })
+  createGame = async () => {
+    const response = await api.createGame;
+    response.gameCreated
+      ? this.setState({ game: response.game, loginError: null })
+      : this.setState({
+          loginError: "There was an error creating the game"
+        });
+  };
+
+  fetchGame = async id => {
+    const response = await api.fetchGame(id);
+    response.gameFound
+      ? this.setState({ game: response.game, loginError: null })
+      : this.setState({ loginError: "Game not found" });
+  };
+
+  startGame = async () => {
+    const response = await api.startGame(
+      this.state.game.id,
+      this.state.preGamePlayers
     );
-  };
-
-  fetchGame = id => {
-    api.fetchGame(id).then(response => {
-      response.gameFound
-        ? this.setState({ game: response.game, loginError: null })
-        : this.setState({ loginError: "Game not found" });
-    });
-  };
-
-  startGame = () => {
-    api
-      .startGame(this.state.game.id, this.state.preGamePlayers)
-      .then(response => {
-        response.gameStarted
-          ? this.setState({ game: response.game, gameError: null })
-          : this.setState({
-              gameError: "There was an error starting the game"
-            });
-      });
+    response.gameStarted
+      ? this.setState({ game: response.game, gameError: null })
+      : this.setState({
+          gameError: "There was an error starting the game"
+        });
   };
 
   render() {
     const { game, preGamePlayers, loginError } = this.state;
-    // console.log(game);
     return (
       <Wrapper>
         {game === null && (

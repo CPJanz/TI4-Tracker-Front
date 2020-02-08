@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ti from "../../Utils/tiObject";
+import helpers from "../../Utils/helpers";
 
 const Wrapper = styled.div``;
 const Title = styled.h2``;
@@ -30,6 +31,12 @@ const RemovePlayer = styled.span`
   border: 1px black solid;
   border-radius: 3px;
 `;
+const FactionInfo = styled.span`
+  padding: 0px 5px;
+  margin: 20px;
+  border: 1px black solid;
+  border-radius: 3px;
+`;
 
 export default function CreateGame(props) {
   const {
@@ -46,6 +53,9 @@ export default function CreateGame(props) {
       <PlayerForm>
         {players.map((player, playerIndex) => (
           <PlayerContainer key={playerIndex}>
+            <RemovePlayer onClick={() => removePlayerFn(playerIndex)}>
+              -
+            </RemovePlayer>
             <NameInput
               value={player.name}
               onChange={event =>
@@ -54,6 +64,7 @@ export default function CreateGame(props) {
             />
             <FactionDropdown
               key={playerIndex}
+              id={`${playerIndex}-dropdown`}
               value={player.faction}
               onChange={event =>
                 playerChangeFactionFn(playerIndex, event.target.value)
@@ -65,9 +76,17 @@ export default function CreateGame(props) {
                 </option>
               ))}
             </FactionDropdown>
-            <RemovePlayer onClick={() => removePlayerFn(playerIndex)}>
-              -
-            </RemovePlayer>
+            <FactionInfo
+              onClick={() => {
+                const factionId = document.getElementById(
+                  `${playerIndex}-dropdown`
+                ).value;
+
+                console.log(helpers.getFactionById(factionId));
+              }}
+            >
+              ?
+            </FactionInfo>
           </PlayerContainer>
         ))}
       </PlayerForm>
