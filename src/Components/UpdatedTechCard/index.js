@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import helpers from "../../Utils/helpers";
 import Icon from "../Icon";
+import UnitStat from "../UnitStat";
 
 const Wrapper = styled.div`
   height: 200px;
@@ -77,6 +78,7 @@ const TextArea = styled.div`
 const UnitArea = styled.div`
   grid-area: unit;
   color: white;
+  display: flex;
 `;
 
 export default function UpdatedTechCard(props) {
@@ -86,8 +88,10 @@ export default function UpdatedTechCard(props) {
     background:
       faction === -1 ? "" : "/Icons/" + helpers.getFactionById(faction).iconname
   };
+  const unitObject = unitid === undefined ? null : helpers.getUnitbyId(unitid);
+  const unitStats = unitObject && helpers.getUnitStatsByObject(unitObject);
+  console.log(unitObject, unitStats);
 
-  console.log(helpers.getTechTypeById(type).name.toLowerCase());
   return (
     <Wrapper {...styleProps}>
       <RequiresTitle>Requires:</RequiresTitle>
@@ -103,11 +107,21 @@ export default function UpdatedTechCard(props) {
         ))}
       </RequiresList>
       <TextArea>
-        {helpers.splitString(text).map((line, index) => (
-          <p key={index}>{line}</p>
-        ))}
+        {unitObject
+          ? helpers
+              .splitString(unitObject.ability)
+              .map((line, index) => <p key={index}>{line}</p>)
+          : helpers
+              .splitString(text)
+              .map((line, index) => <p key={index}>{line}</p>)}
       </TextArea>
-      {unitid && <UnitArea>Hello</UnitArea>}
+      {unitStats && (
+        <UnitArea>
+          {unitStats.map((stat, index) => (
+            <UnitStat {...stat} key={index} />
+          ))}
+        </UnitArea>
+      )}
     </Wrapper>
   );
 }

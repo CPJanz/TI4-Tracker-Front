@@ -28,7 +28,6 @@ export default function ScoreTrack(props) {
   const playerBuckets = [];
   const playerScores = {};
   players.forEach(player => {
-    console.log(helpers.getScoreFromPlayerObj(player));
     const playerScore = helpers.getScoreFromPlayerObj(player);
     if (playerScores.hasOwnProperty(playerScore)) {
       playerScores[playerScore].push(player);
@@ -36,7 +35,6 @@ export default function ScoreTrack(props) {
       playerScores[playerScore] = [player];
     }
   });
-  console.log(playerScores);
   for (let i = 0; i <= 10; i++) {
     scoreNumbers.push(
       <Bucket key={i}>
@@ -56,7 +54,6 @@ export default function ScoreTrack(props) {
       </Bucket>
     );
   }
-  console.log(playerBuckets);
   return (
     <Wrapper>
       <ScoreRuler>{scoreNumbers.map(value => value)}</ScoreRuler>

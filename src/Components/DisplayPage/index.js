@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Player from "../Player";
 import helpers from "../../Utils/helpers";
+import EditPage from "../EditPage";
 
 const Wrapper = styled.div``;
 const PublicObjective = styled.div``;
@@ -37,6 +38,7 @@ export default function DisplayPage(props) {
       {players.map((player, index) => (
         <Player data={player} key={index} />
       ))}
+      <EditPage></EditPage>
     </Wrapper>
   );
 }

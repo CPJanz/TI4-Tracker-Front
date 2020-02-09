@@ -12,6 +12,19 @@ const helpers = {
 
   getTechTypeById: id => getGenericById(id, "tech_types"),
 
+  getUnitbyId: id => getGenericById(id, "upgraded_units"),
+
+  getUnitStatsByObject: unitObject => {
+    const potentialStats = ["cost", "combat", "move", "capacity"];
+    const stats = [];
+    potentialStats.forEach(stat => {
+      if (unitObject[stat] !== 0) {
+        stats.push({ name: stat, value: unitObject[stat] });
+      }
+    });
+    return stats;
+  },
+
   calculatePoints: function(objectiveArray) {
     return objectiveArray.reduce((total, objective) => {
       return total + this.getObjectiveById(objective.id).pointvalue;
