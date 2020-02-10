@@ -36,7 +36,7 @@ export default function DisplayPage(props) {
         </PublicObjective>
       ))}
       {players.map((player, index) => (
-        <Player data={player} key={index} />
+        <Player {...player} key={index} />
       ))}
       <EditPage></EditPage>
     </Wrapper>

@@ -31,6 +31,7 @@ const Points = styled.div`
   border: 1px white solid;
   border-radius: 50%;
   background-color: white;
+  cursor: pointer;
 `;
 
 const IconContainer = styled.div`
@@ -45,7 +46,7 @@ const TechContainer = styled.div`
 const TechTitle = styled.div``;
 
 export default function Player(props) {
-  const { name, faction, points, tech } = props.data;
+  const { name, faction, points, tech } = props;
   const factionObject = helpers.getFactionById(faction);
   return (
     <Wrapper>
@@ -56,7 +57,15 @@ export default function Player(props) {
       <Faction>
         <FactionCard faction={factionObject} />
       </Faction>
-      <Points>{helpers.calculatePoints(points)}</Points>
+      <Points
+        onClick={() =>
+          points.forEach(objective =>
+            console.log(helpers.getObjectiveById(objective.id))
+          )
+        }
+      >
+        {helpers.calculatePoints(points)}
+      </Points>
       <TechContainer>
         <TechTitle>Tech:</TechTitle>
         {tech.map((id, index) => (

@@ -90,7 +90,6 @@ export default function UpdatedTechCard(props) {
   };
   const unitObject = unitid === undefined ? null : helpers.getUnitbyId(unitid);
   const unitStats = unitObject && helpers.getUnitStatsByObject(unitObject);
-  console.log(unitObject, unitStats);
 
   return (
     <Wrapper {...styleProps}>
