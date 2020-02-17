@@ -14,6 +14,9 @@ const helpers = {
 
   getUnitbyId: id => getGenericById(id, "upgraded_units"),
 
+  getPromissoryByFactionId: factionId =>
+    getGenericById(parseInt(factionId), "factions").promissorynote,
+
   getUnitStatsByObject: unitObject => {
     const potentialStats = ["cost", "combat", "move", "capacity"];
     const stats = [];
