@@ -5,6 +5,8 @@ import Popup from "reactjs-popup";
 import Icon from "../Icon";
 import PromissoryNote from "../PromissoryNote";
 import UpdatedTechCard from "../UpdatedTechCard";
+import FlagshipCard from "../FlagshipCard";
+import PromissoryCard from "../PromissoryCard";
 
 const Wrapper = styled.div`
   height: 100%;
@@ -13,6 +15,7 @@ const Wrapper = styled.div`
 const FactionAbilities = styled.ul``;
 const Ability = styled.li``;
 const StartingTech = styled.div``;
+const FactionTech = styled.div``;
 
 export default function FactionModal(props) {
   const { icon, factionId } = props;
@@ -20,6 +23,7 @@ export default function FactionModal(props) {
     factionId === null
       ? helpers.getFactionById(0)
       : helpers.getFactionById(factionId);
+  console.log(factionObject.id);
   return (
     <Popup
       trigger={icon}
@@ -47,6 +51,20 @@ export default function FactionModal(props) {
               );
             })}
         </StartingTech>
+        <FlagshipCard
+          faction={factionObject.id}
+          flagshipObject={helpers.getFlagshipById(factionObject.flagship)}
+        />
+        <FactionTech>
+          {String(factionObject.factiontech)
+            .split(",")
+            .map((id, index) => {
+              return (
+                <UpdatedTechCard key={index} tech={helpers.getTechById(id)} />
+              );
+            })}
+        </FactionTech>
+        <PromissoryCard {...factionObject} />
         {/* TODO: Display faction tech and flagship */}
       </Wrapper>
     </Popup>

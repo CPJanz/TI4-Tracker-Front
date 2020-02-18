@@ -14,6 +14,8 @@ const helpers = {
 
   getUnitbyId: id => getGenericById(id, "upgraded_units"),
 
+  getFlagshipById: id => getGenericById(id, "flagships"),
+
   getPromissoryByFactionId: factionId =>
     getGenericById(parseInt(factionId), "factions").promissorynote,
 
