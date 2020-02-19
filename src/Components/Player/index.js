@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import helpers from "../../Utils/helpers";
 import FactionCard from "../FactionCard";
-import TechCard from "../TechCard";
 import Icon from "../Icon";
+import TechBanner from "../TechBanner";
 
 const Wrapper = styled.div`
   border: 1px black solid;
@@ -46,7 +46,7 @@ const TechContainer = styled.div`
 const TechTitle = styled.div``;
 
 export default function Player(props) {
-  const { name, faction, points, tech } = props;
+  const { name, faction, points } = props;
   const factionObject = helpers.getFactionById(faction);
   return (
     <Wrapper>
@@ -67,10 +67,9 @@ export default function Player(props) {
         {helpers.calculatePoints(points)}
       </Points>
       <TechContainer>
-        <TechTitle>Tech:</TechTitle>
-        {tech.map((id, index) => (
-          <TechCard tech={helpers.getTechById(id)} key={index} />
-        ))}
+        <TechTitle>
+          <TechBanner {...props} />
+        </TechTitle>
       </TechContainer>
     </Wrapper>
   );

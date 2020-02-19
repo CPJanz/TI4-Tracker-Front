@@ -16,7 +16,7 @@ export default function EditPage(props) {
   return (
     <Wrapper>
       {TEMPTECHOBJECT.map((tech, index) => (
-        <UpdatedTechCard key={index} tech={tech} />
+        <UpdatedTechCard key={index} {...tech} />
       ))}
     </Wrapper>
   );

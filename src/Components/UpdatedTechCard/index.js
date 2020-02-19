@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   border: 3px solid ${props => `${props.color}`};
   border-radius: 10px;
   overflowy: scroll;
-  margin: 10px;
+  margin: 10px auto;
   display: grid;
   grid-template-columns: 250px 50px;
   grid-template-rows: 50px 100px 50px;

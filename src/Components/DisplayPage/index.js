@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Player from "../Player";
 import helpers from "../../Utils/helpers";
-import EditPage from "../EditPage";
+import TechBanner from "../TechBanner";
 
 const Wrapper = styled.div``;
 const PublicObjective = styled.div``;
@@ -23,7 +23,6 @@ const PlayersWhoCompleted = (players, objective) => {
 
 export default function DisplayPage(props) {
   const { players, publicObjectives } = props.gameData;
-
   return (
     <Wrapper>
       <h3>Public Objectives</h3>
@@ -38,7 +37,7 @@ export default function DisplayPage(props) {
       {players.map((player, index) => (
         <Player {...player} key={index} />
       ))}
-      <EditPage></EditPage>
+      <TechBanner {...players[0]} />
     </Wrapper>
   );
 }

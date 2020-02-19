@@ -5,6 +5,11 @@ import Login from "../LoginPage";
 import Nav from "../Nav";
 import DisplayPage from "../DisplayPage";
 import api from "../../Utils/api";
+import mockData from "../../Utils/mockData";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faQuestionCircle);
 
 const Wrapper = styled.div`
   text-align: center;
@@ -14,8 +19,8 @@ export default class App extends React.Component {
   state = {
     loginError: null,
     gameError: null,
-    game: null,
-    // game: mockData.TEMP_GAME_DATA,
+    // game: null,
+    game: mockData.TEMP_GAME_DATA,
     preGamePlayers: [{ name: "", faction: 0 }]
   };
 
