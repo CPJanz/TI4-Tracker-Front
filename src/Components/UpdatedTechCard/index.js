@@ -82,7 +82,7 @@ const UnitArea = styled.div`
 `;
 
 export default function UpdatedTechCard(props) {
-  const { faction, unitid, iconname, requires, type, name, text } = props.tech;
+  const { faction, unitid, iconname, requires, type, name, text } = props;
   const styleProps = {
     color: helpers.getTechTypeById(type).name,
     background:

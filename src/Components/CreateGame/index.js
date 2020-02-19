@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import ti from "../../Utils/tiObject";
-import helpers from "../../Utils/helpers";
-import Popup from "reactjs-popup";
 import FactionModal from "../FactionModal";
 
 const Wrapper = styled.div``;
@@ -79,18 +77,6 @@ export default function CreateGame(props) {
                 </option>
               ))}
             </FactionDropdown>
-            {/* <Popup
-              trigger={<FactionInfo>?</FactionInfo>}
-              modal
-              closeOnDocumentClick
-            >
-              <FactionModal
-                factionId={
-                  document.getElementById(`${playerIndex}-dropdown`) &&
-                  document.getElementById(`${playerIndex}-dropdown`).value
-                }
-              />
-            </Popup> */}
             <FactionModal
               icon={<FactionInfo>?</FactionInfo>}
               factionId={

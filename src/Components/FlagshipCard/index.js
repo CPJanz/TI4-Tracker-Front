@@ -57,9 +57,7 @@ const UnitArea = styled.div`
 `;
 
 export default function FlagshipCard(props) {
-  // const { name, text, cost, combat, move, capacity, ability } = props.flagshipObject;
   const { faction, flagshipObject } = props;
-  console.log(props);
   const styleProps = {
     background:
       faction === -1 ? "" : "/Icons/" + helpers.getFactionById(faction).iconname

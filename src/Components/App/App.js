@@ -4,12 +4,7 @@ import CreateGame from "../CreateGame";
 import Login from "../LoginPage";
 import Nav from "../Nav";
 import DisplayPage from "../DisplayPage";
-import EditPage from "../EditPage";
 import api from "../../Utils/api";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
-import mockData from "../../Utils/mockData";
-import helpers from "../../Utils/helpers";
 
 const Wrapper = styled.div`
   text-align: center;
@@ -104,18 +99,6 @@ export default class App extends React.Component {
             <DisplayPage gameData={game} />
           </React.Fragment>
         )}
-        {/* <Router>
-          <header className="App-header">
-            <Nav game={game} />
-            <Switch>
-              <Route exact path="/login" component={Login} />
-              <Route path="/edit" render={() => <EditPage gameData={game} />} />
-              <Route path="/" render={() => <DisplayPage gameData={game} />} />
-              <Route render={() => <h1>404</h1>} />
-            </Switch>
-          </header>
-        </Router>
-        )})} */}
       </Wrapper>
     );
   }

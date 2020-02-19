@@ -13,7 +13,6 @@ for (let i = 0; i < 60; i++) {
 }
 
 export default function EditPage(props) {
-  const { gameData } = props;
   return (
     <Wrapper>
       {TEMPTECHOBJECT.map((tech, index) => (
