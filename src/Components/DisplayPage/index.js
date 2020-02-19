@@ -37,7 +37,6 @@ export default function DisplayPage(props) {
       {players.map((player, index) => (
         <Player {...player} key={index} />
       ))}
-      <TechBanner {...players[0]} />
     </Wrapper>
   );
 }
