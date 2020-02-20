@@ -47,7 +47,7 @@ export default function ScoreTrack(props) {
           playerScores[i].map((playerObject, index) => (
             <Icon
               key={index}
-              iconFile={helpers.getFactionById(playerObject.faction).iconname}
+              {...helpers.getFactionById(playerObject.faction)}
               size={25}
             />
           ))}

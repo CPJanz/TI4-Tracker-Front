@@ -52,7 +52,7 @@ export default function Player(props) {
     <Wrapper>
       <Name>{name}</Name>
       <IconContainer>
-        <Icon iconFile={factionObject.iconname} size={43} />
+        <Icon {...factionObject} size={43} />
       </IconContainer>
       <Faction>
         <FactionCard faction={factionObject} />

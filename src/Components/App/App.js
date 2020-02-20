@@ -24,6 +24,16 @@ export default class App extends React.Component {
     preGamePlayers: [{ name: "", faction: 0 }]
   };
 
+  // THIS SHOWS WE CAN AFFECT THE PAGE WITHOUT RELOADING
+  componentDidMount = () => {
+    setTimeout(() => {
+      console.log(this.state.game);
+      const updatedGameState = this.state.game;
+      updatedGameState.players[0].points.push({ id: 1, roundClaimed: 3 });
+      this.setState({ game: updatedGameState });
+    }, 600);
+  };
+
   addPlayer = player => {
     const updatedList = this.state.players;
     updatedList.push(player);

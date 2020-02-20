@@ -9,10 +9,10 @@ const Wrapper = styled.span`
 `;
 
 export default function Icon(props) {
-  const { iconFile, size } = props;
+  const { iconname, size } = props;
   return (
     <Wrapper size={size || 20}>
-      {iconFile && <img src={`/Icons/${iconFile}`} alt={`icon`} />}
+      {iconname && <img src={`/Icons/${iconname}`} alt={`icon`} />}
     </Wrapper>
   );
 }

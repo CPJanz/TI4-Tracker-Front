@@ -96,12 +96,12 @@ export default function UpdatedTechCard(props) {
       <RequiresTitle>Requires:</RequiresTitle>
       <NameArea color={styleProps.color}>{name}</NameArea>
       <IconArea>
-        <Icon iconFile={iconname} size={40} />
+        <Icon iconname={iconname} size={40} />
       </IconArea>
       <RequiresList>
         {helpers.getIconsByRequiresString(requires).map((icon, index) => (
           <li key={index}>
-            <Icon iconFile={icon} size={28} />
+            <Icon iconname={icon} size={28} />
           </li>
         ))}
       </RequiresList>

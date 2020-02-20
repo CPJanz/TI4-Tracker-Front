@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Player from "../Player";
 import helpers from "../../Utils/helpers";
-import TechBanner from "../TechBanner";
+import Icon from "../Icon";
+import ObjectiveBanner from "../ObjectiveBanner";
 
 const Wrapper = styled.div``;
 const PublicObjective = styled.div``;
@@ -15,10 +16,13 @@ const Bubble = styled.span`
 `;
 
 const PlayersWhoCompleted = (players, objective) => {
-  return players.filter(player => {
-    const objectiveNames = player.points.map(objective => objective.id);
-    return objectiveNames.includes(objective);
+  const result = [];
+  players.forEach(player => {
+    player.points.forEach(point => {
+      point.id === objective && result.push(player.faction);
+    });
   });
+  return result;
 };
 
 export default function DisplayPage(props) {
@@ -27,13 +31,17 @@ export default function DisplayPage(props) {
     <Wrapper>
       <h3>Public Objectives</h3>
       {publicObjectives.map((objective, index) => (
-        <PublicObjective key={index}>
-          {helpers.getObjectiveById(objective.id).name}
+        <ObjectiveBanner
+          key={index}
+          {...helpers.getObjectiveById(objective.id)}
+        >
           {PlayersWhoCompleted(players, objective.id).map((player, index) => (
-            <Bubble key={index}>{player.name}</Bubble>
+            <Icon key={index} size={25} {...helpers.getFactionById(player)} />
           ))}
-        </PublicObjective>
+        </ObjectiveBanner>
       ))}
+      <h3>Misc Points</h3>
+
       {players.map((player, index) => (
         <Player {...player} key={index} />
       ))}

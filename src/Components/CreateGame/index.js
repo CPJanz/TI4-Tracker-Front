@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ti from "../../Utils/tiObject";
 import FactionModal from "../FactionModal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Wrapper = styled.div``;
 const Title = styled.h2``;
@@ -78,7 +79,11 @@ export default function CreateGame(props) {
               ))}
             </FactionDropdown>
             <FactionModal
-              icon={<FactionInfo>?</FactionInfo>}
+              icon={
+                <FactionInfo>
+                  <FontAwesomeIcon icon="question-circle" />
+                </FactionInfo>
+              }
               factionId={
                 document.getElementById(`${playerIndex}-dropdown`) &&
                 document.getElementById(`${playerIndex}-dropdown`).value

@@ -30,7 +30,7 @@ export default function FactionModal(props) {
       contentStyle={{ height: "80%", overflow: "hidden" }}
     >
       <Wrapper>
-        <Icon size={75} iconFile={factionObject.iconname} />
+        <Icon size={75} {...factionObject} />
         {factionObject.name}
         <FactionAbilities>
           {helpers
