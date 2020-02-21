@@ -6,14 +6,6 @@ import Icon from "../Icon";
 import ObjectiveBanner from "../ObjectiveBanner";
 
 const Wrapper = styled.div``;
-const PublicObjective = styled.div``;
-const Bubble = styled.span`
-  background-color: black;
-  color: white;
-  border-radius: 25%;
-  padding: auto 5px;
-  margin: auto 5px;
-`;
 
 const PlayersWhoCompleted = (players, objective) => {
   const result = [];

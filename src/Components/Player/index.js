@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import helpers from "../../Utils/helpers";
-import FactionCard from "../FactionCard";
+import FactionModal from "../FactionModal";
 import Icon from "../Icon";
 import TechBanner from "../TechBanner";
+import Popup from "reactjs-popup";
+import ObjectiveCard from "../ObjectiveCard";
 
 const Wrapper = styled.div`
   border: 1px black solid;
@@ -31,7 +33,7 @@ const Points = styled.div`
   border: 1px white solid;
   border-radius: 50%;
   background-color: white;
-  cursor: pointer;
+  cursor: help;
 `;
 
 const IconContainer = styled.div`
@@ -55,17 +57,24 @@ export default function Player(props) {
         <Icon {...factionObject} size={43} />
       </IconContainer>
       <Faction>
-        <FactionCard faction={factionObject} />
+        {factionObject.name}
+        <FactionModal factionId={factionObject.id} />
       </Faction>
-      <Points
-        onClick={() =>
-          points.forEach(objective =>
-            console.log(helpers.getObjectiveById(objective.id))
-          )
-        }
+      <Popup
+        trigger={<Points>{helpers.calculatePoints(points)}</Points>}
+        modal
+        closeOnDocumentClick
+        contentStyle={{ height: "80%", overflow: "hidden" }}
       >
-        {helpers.calculatePoints(points)}
-      </Points>
+        <div>
+          {points.map((point, index) => (
+            <ObjectiveCard
+              key={index}
+              {...helpers.getObjectiveById(point.id)}
+            />
+          ))}
+        </div>
+      </Popup>
       <TechContainer>
         <TechTitle>
           <TechBanner {...props} />

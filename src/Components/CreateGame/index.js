@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import ti from "../../Utils/tiObject";
 import FactionModal from "../FactionModal";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Wrapper = styled.div``;
 const Title = styled.h2``;
@@ -27,12 +26,6 @@ const StartGameButton = styled.span`
 const NameInput = styled.input``;
 const FactionDropdown = styled.select``;
 const RemovePlayer = styled.span`
-  padding: 0px 5px;
-  margin: 20px;
-  border: 1px black solid;
-  border-radius: 3px;
-`;
-const FactionInfo = styled.span`
   padding: 0px 5px;
   margin: 20px;
   border: 1px black solid;
@@ -79,11 +72,6 @@ export default function CreateGame(props) {
               ))}
             </FactionDropdown>
             <FactionModal
-              icon={
-                <FactionInfo>
-                  <FontAwesomeIcon icon="question-circle" />
-                </FactionInfo>
-              }
               factionId={
                 document.getElementById(`${playerIndex}-dropdown`) &&
                 document.getElementById(`${playerIndex}-dropdown`).value

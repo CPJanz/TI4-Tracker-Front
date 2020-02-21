@@ -6,25 +6,37 @@ import Icon from "../Icon";
 import UpdatedTechCard from "../UpdatedTechCard";
 import FlagshipCard from "../FlagshipCard";
 import PromissoryCard from "../PromissoryCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Wrapper = styled.div`
   height: 100%;
   overflow-y: auto;
 `;
+
+const StyledQuestionIcon = styled.span`
+  cursor: pointer;
+`;
+
 const FactionAbilities = styled.ul``;
 const Ability = styled.li``;
 const StartingTech = styled.div``;
 const FactionTech = styled.div``;
 
+const questionIcon = (
+  <StyledQuestionIcon>
+    <FontAwesomeIcon icon="question-circle" />
+  </StyledQuestionIcon>
+);
+
 export default function FactionModal(props) {
-  const { icon, factionId } = props;
+  const { triggerElement = questionIcon, factionId } = props;
   const factionObject =
     factionId === null
       ? helpers.getFactionById(0)
       : helpers.getFactionById(factionId);
   return (
     <Popup
-      trigger={icon}
+      trigger={triggerElement}
       modal
       closeOnDocumentClick
       contentStyle={{ height: "80%", overflow: "hidden" }}
@@ -32,6 +44,7 @@ export default function FactionModal(props) {
       <Wrapper>
         <Icon size={75} {...factionObject} />
         {factionObject.name}
+        <h2>Faction Abilities (needs component)</h2>
         <FactionAbilities>
           {helpers
             .splitString(factionObject.factionabilities)

@@ -6,6 +6,8 @@ const helpers = {
 
   getObjectiveById: id => getGenericById(id, "objectives"),
 
+  getObjectiveTypeById: id => getGenericById(id, "objective_types"),
+
   getFactionById: id => getGenericById(id, "factions"),
 
   getTechById: id => getGenericById(id, "tech"),
