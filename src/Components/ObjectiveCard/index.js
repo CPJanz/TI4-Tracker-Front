@@ -5,6 +5,7 @@ import helpers from "../../Utils/helpers";
 const Wrapper = styled.div`
   margin: 10px auto;
   border: black 1px solid;
+  color: black;
 `;
 
 export default function ObjectiveCard(props) {

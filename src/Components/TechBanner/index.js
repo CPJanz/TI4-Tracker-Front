@@ -1,23 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import helpers from "../../Utils/helpers";
-import Popup from "reactjs-popup";
 import UpdatedTechCard from "../UpdatedTechCard";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CardListModal from "../CardListModal";
 
-const Content = styled.div`
-  height: 100%;
-  overflow-y: auto;
-`;
+const Content = styled.div``;
 
 const Wrapper = styled.div`
   font-weight: bold;
   background: darkgrey;
-`;
-
-const Header = styled.span`
-  cursor: pointer;
-  margin: auto 5px;
 `;
 
 export default function TechBanner(props) {
@@ -42,27 +33,13 @@ export default function TechBanner(props) {
   return (
     <Wrapper>
       Tech: {displayString}
-      <Popup
-        trigger={
-          <Header>
-            <FontAwesomeIcon icon="question-circle" />
-          </Header>
-        }
-        modal
-        closeOnDocumentClick
-        contentStyle={{
-          height: `${techObjectArray.length * 230}px`,
-          maxHeight: "80%",
-          width: "340px",
-          overflow: "hidden"
-        }}
-      >
+      <CardListModal count={techObjectArray.length}>
         <Content>
           {techObjectArray.map((tech, index) => (
             <UpdatedTechCard key={index} {...tech} />
           ))}
         </Content>
-      </Popup>
+      </CardListModal>
     </Wrapper>
   );
 }
