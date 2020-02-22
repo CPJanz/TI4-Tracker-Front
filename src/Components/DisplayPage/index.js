@@ -14,9 +14,10 @@ const PlayerContainer = styled.div`
 
 const PlayersWhoCompleted = (players, objective) => {
   const result = [];
-  players.forEach(player => {
+  players.forEach((player, index) => {
+    result.push(0);
     player.points.forEach(point => {
-      point.id === objective && result.push(player.faction);
+      point.id === objective && result[index]++;
     });
   });
   return result;
@@ -32,9 +33,17 @@ export default function DisplayPage(props) {
           key={index}
           {...helpers.getObjectiveById(objective.id)}
         >
-          {PlayersWhoCompleted(players, objective.id).map((player, index) => (
-            <Icon key={index} size={25} {...helpers.getFactionById(player)} />
-          ))}
+          {PlayersWhoCompleted(players, objective.id).map(
+            (player, index) =>
+              player > 0 && (
+                <Icon
+                  key={index}
+                  size={25}
+                  {...helpers.getFactionById(index)}
+                  text={player > 1 ? player : ""}
+                />
+              )
+          )}
         </ObjectiveBanner>
       ))}
       <h3>Misc Points</h3>
