@@ -40,6 +40,7 @@ const helpers = {
 
   getIconsByRequiresString: requiresString => {
     const requiresIcons = [];
+    console.log(requiresString.split(""));
     requiresString.split("").forEach(icon => {
       switch (icon) {
         case "Y":
@@ -54,7 +55,10 @@ const helpers = {
         case "G":
           requiresIcons.push("Biotic.png");
           break;
+        case "N":
+          break;
         default:
+          requiresIcons.push("Placeholder.png");
           break;
       }
     });

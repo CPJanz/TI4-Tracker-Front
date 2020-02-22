@@ -3,12 +3,14 @@ import styled from "styled-components";
 import helpers from "../../Utils/helpers";
 import UpdatedTechCard from "../UpdatedTechCard";
 import CardListModal from "../CardListModal";
+import Icon from "../Icon";
 
 const Content = styled.div``;
 
 const Wrapper = styled.div`
   font-weight: bold;
   background: darkgrey;
+  padding: 5px;
 `;
 
 export default function TechBanner(props) {
@@ -32,7 +34,10 @@ export default function TechBanner(props) {
     "F".repeat(factionTechCount);
   return (
     <Wrapper>
-      Tech: {displayString}
+      Tech:
+      {helpers.getIconsByRequiresString(displayString).map((icon, index) => (
+        <Icon key={index} iconname={icon} size={18} />
+      ))}
       <CardListModal count={techObjectArray.length}>
         <Content>
           {techObjectArray.map((tech, index) => (
