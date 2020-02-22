@@ -7,6 +7,11 @@ import ObjectiveBanner from "../ObjectiveBanner";
 
 const Wrapper = styled.div``;
 
+const PlayerContainer = styled.div`
+  max-width: 1000px;
+  margin: auto;
+`;
+
 const PlayersWhoCompleted = (players, objective) => {
   const result = [];
   players.forEach(player => {
@@ -33,10 +38,11 @@ export default function DisplayPage(props) {
         </ObjectiveBanner>
       ))}
       <h3>Misc Points</h3>
-
-      {players.map((player, index) => (
-        <Player {...player} key={index} />
-      ))}
+      <PlayerContainer>
+        {players.map((player, index) => (
+          <Player {...player} key={index} />
+        ))}
+      </PlayerContainer>
     </Wrapper>
   );
 }

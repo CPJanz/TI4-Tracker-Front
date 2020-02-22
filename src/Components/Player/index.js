@@ -8,6 +8,10 @@ import Popup from "reactjs-popup";
 import ObjectiveCard from "../ObjectiveCard";
 
 const Wrapper = styled.div`
+  display: inline-block;
+`;
+
+const GridWrapper = styled.div`
   border: 1px black solid;
   border-radius: 5px;
   display: grid;
@@ -15,8 +19,9 @@ const Wrapper = styled.div`
   grid-template-rows: 1fr auto auto;
   grid-template-areas: "icon name name points" "icon faction faction ." "tech tech tech tech";
   width: 300px;
-  margin: 10px auto;
+  margin: 10px;
 `;
+
 const Name = styled.div`
   font-size: 20px;
   grid-area: name;
@@ -52,34 +57,36 @@ export default function Player(props) {
   const factionObject = helpers.getFactionById(faction);
   return (
     <Wrapper>
-      <Name>{name}</Name>
-      <IconContainer>
-        <Icon {...factionObject} size={43} />
-      </IconContainer>
-      <Faction>
-        {factionObject.name}
-        <FactionModal factionId={factionObject.id} />
-      </Faction>
-      <Popup
-        trigger={<Points>{helpers.calculatePoints(points)}</Points>}
-        modal
-        closeOnDocumentClick
-        contentStyle={{ height: "80%", overflow: "hidden" }}
-      >
-        <div>
-          {points.map((point, index) => (
-            <ObjectiveCard
-              key={index}
-              {...helpers.getObjectiveById(point.id)}
-            />
-          ))}
-        </div>
-      </Popup>
-      <TechContainer>
-        <TechTitle>
-          <TechBanner {...props} />
-        </TechTitle>
-      </TechContainer>
+      <GridWrapper>
+        <Name>{name}</Name>
+        <IconContainer>
+          <Icon {...factionObject} size={43} />
+        </IconContainer>
+        <Faction>
+          {factionObject.name}
+          <FactionModal factionId={factionObject.id} />
+        </Faction>
+        <Popup
+          trigger={<Points>{helpers.calculatePoints(points)}</Points>}
+          modal
+          closeOnDocumentClick
+          contentStyle={{ height: "80%", overflow: "hidden" }}
+        >
+          <div>
+            {points.map((point, index) => (
+              <ObjectiveCard
+                key={index}
+                {...helpers.getObjectiveById(point.id)}
+              />
+            ))}
+          </div>
+        </Popup>
+        <TechContainer>
+          <TechTitle>
+            <TechBanner {...props} />
+          </TechTitle>
+        </TechContainer>
+      </GridWrapper>
     </Wrapper>
   );
 }
