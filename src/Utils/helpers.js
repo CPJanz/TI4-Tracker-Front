@@ -40,7 +40,6 @@ const helpers = {
 
   getIconsByRequiresString: requiresString => {
     const requiresIcons = [];
-    console.log(requiresString.split(""));
     requiresString.split("").forEach(icon => {
       switch (icon) {
         case "Y":

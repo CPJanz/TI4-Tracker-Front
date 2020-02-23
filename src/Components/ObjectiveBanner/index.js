@@ -30,7 +30,6 @@ const Content = styled.div`
 
 export default function ObjectiveBanner(props) {
   const { name, type, pointvalue } = props;
-  console.dirxml(props);
   return (
     <Wrapper>
       <TitleContainer>

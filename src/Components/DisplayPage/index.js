@@ -23,12 +23,26 @@ const PlayersWhoCompleted = (players, objective) => {
   return result;
 };
 
+const objectivesToDisplay = (publicObjectives, players) => {
+  const results = publicObjectives.slice(0);
+  players.forEach(player => {
+    player.points.forEach(objective => {
+      if (results.filter(result => result.id === objective.id).length === 0) {
+        results.push(objective);
+      }
+    });
+  });
+  return results;
+};
+
 export default function DisplayPage(props) {
   const { players, publicObjectives } = props.gameData;
+  const objectives = objectivesToDisplay(publicObjectives, players);
   return (
     <Wrapper>
       <h3>Public Objectives</h3>
-      {publicObjectives.map((objective, index) => (
+
+      {objectives.map((objective, index) => (
         <ObjectiveBanner
           key={index}
           {...helpers.getObjectiveById(objective.id)}
