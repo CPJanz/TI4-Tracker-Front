@@ -18,6 +18,37 @@ const helpers = {
 
   getFlagshipById: id => getGenericById(id, "flagships"),
 
+  getAvailablePublicObjectives: current => {
+    console.log("Current", current);
+    const currentIds = current.map(objective => objective.id);
+    return tiObject.objectives.filter(
+      objective =>
+        (objective.type === 2 || objective.type === 3) &&
+        !currentIds.includes(objective.id)
+    );
+  },
+
+  getUnclaimedSecretObjectives: players => {
+    const allSecretObjectives = tiObject.objectives.filter(
+      objective => objective.type === 4 || objective.type === 5
+    );
+    const claimedSecretObjectives = [];
+    players.forEach(player => {
+      player.points.forEach(point => {
+        const pointType = helpers.getObjectiveById(point.id).type;
+        if (
+          (pointType === 4 || pointType === 5) &&
+          !claimedSecretObjectives.includes(point.id)
+        ) {
+          claimedSecretObjectives.push(point.id);
+        }
+      });
+    });
+    return allSecretObjectives.filter(
+      objective => !claimedSecretObjectives.includes(objective.id)
+    );
+  },
+
   getPromissoryByFactionId: factionId =>
     getGenericById(parseInt(factionId), "factions").promissorynote,
 

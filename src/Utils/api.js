@@ -44,6 +44,13 @@ const api = {
         resolve({ gameStarted: true, game: MOCK_START_GAME_DATA });
       }, 3000);
     });
+  },
+  addPublicObjective: (objectiveId, gameId) => {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve({ objectiveAdded: true, id: objectiveId });
+      });
+    });
   }
 };
 

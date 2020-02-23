@@ -23,6 +23,7 @@ const Title = styled.span`
 `;
 const Content = styled.div`
   padding-top: 3px;
+  min-height: 29px;
   & > * {
     margin: 0 2px;
   }

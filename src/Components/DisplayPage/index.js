@@ -4,6 +4,7 @@ import Player from "../Player";
 import helpers from "../../Utils/helpers";
 import Icon from "../Icon";
 import ObjectiveBanner from "../ObjectiveBanner";
+import AddObjectiveModal from "../AddObjectiveModal";
 
 const Wrapper = styled.div``;
 
@@ -11,6 +12,8 @@ const PlayerContainer = styled.div`
   max-width: 1000px;
   margin: auto;
 `;
+
+const ObjectivesContainer = styled.div``;
 
 const PlayersWhoCompleted = (players, objective) => {
   const result = [];
@@ -24,6 +27,7 @@ const PlayersWhoCompleted = (players, objective) => {
 };
 
 const objectivesToDisplay = (publicObjectives, players) => {
+  console.log("Public Objectives", publicObjectives);
   const results = publicObjectives.slice(0);
   players.forEach(player => {
     player.points.forEach(objective => {
@@ -36,34 +40,41 @@ const objectivesToDisplay = (publicObjectives, players) => {
 };
 
 export default function DisplayPage(props) {
+  const { addPublicObjectiveFn } = props;
   const { players, publicObjectives } = props.gameData;
   const objectives = objectivesToDisplay(publicObjectives, players);
+  console.log("Display Page Props", props);
   return (
     <Wrapper>
-      <h3>Public Objectives</h3>
-
-      {objectives.map((objective, index) => (
-        <ObjectiveBanner
-          key={index}
-          {...helpers.getObjectiveById(objective.id)}
-        >
-          {PlayersWhoCompleted(players, objective.id).map(
-            (player, index) =>
-              player > 0 && (
-                <Icon
-                  key={index}
-                  size={25}
-                  {...helpers.getFactionById(index)}
-                  text={player > 1 ? player : ""}
-                />
-              )
-          )}
-        </ObjectiveBanner>
-      ))}
-      <h3>Misc Points</h3>
+      <h3>Objectives</h3>
+      <ObjectivesContainer>
+        {objectives.map((objective, index) => (
+          <ObjectiveBanner
+            key={index}
+            {...helpers.getObjectiveById(objective.id)}
+          >
+            {PlayersWhoCompleted(players, objective.id).map(
+              (player, index) =>
+                player > 0 && (
+                  <Icon
+                    key={index}
+                    size={25}
+                    {...helpers.getFactionById(index)}
+                    text={player > 1 ? player : ""}
+                  />
+                )
+            )}
+          </ObjectiveBanner>
+        ))}
+        <AddObjectiveModal
+          {...props.gameData}
+          addPublicObjectiveFn={addPublicObjectiveFn}
+        />
+      </ObjectivesContainer>
+      <h3>Players</h3>
       <PlayerContainer>
         {players.map((player, index) => (
-          <Player {...player} key={index} />
+          <Player {...player} game={props.gameData} key={index} />
         ))}
       </PlayerContainer>
     </Wrapper>

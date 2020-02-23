@@ -3,7 +3,7 @@ const mockData = {
     gameState: 1,
     round: 3,
     publicObjectives: [
-      { roundRevealed: 1, id: 1 },
+      { roundRevealed: 1, id: 9 },
       { roundRevealed: 1, id: 4 }
     ],
     players: [
@@ -18,7 +18,8 @@ const mockData = {
           {
             id: 4,
             roundClaimed: 3
-          }
+          },
+          { id: 23, roundClaimed: 2 }
         ],
         tech: [1, 2, 5, 11]
       },

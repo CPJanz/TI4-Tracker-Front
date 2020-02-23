@@ -24,16 +24,6 @@ export default class App extends React.Component {
     preGamePlayers: [{ name: "", faction: 0 }]
   };
 
-  // THIS SHOWS WE CAN AFFECT THE PAGE WITHOUT RELOADING
-  componentDidMount = () => {
-    setTimeout(() => {
-      console.log(this.state.game);
-      const updatedGameState = this.state.game;
-      updatedGameState.players[0].points.push({ id: 1, roundClaimed: 3 });
-      this.setState({ game: updatedGameState });
-    }, 600);
-  };
-
   addPlayer = player => {
     const updatedList = this.state.players;
     updatedList.push(player);
@@ -66,6 +56,22 @@ export default class App extends React.Component {
       : this.setState({
           gameError: "There was an error starting the game"
         });
+  };
+
+  addPublicObjective = async objectiveId => {
+    const { round, publicObjectives, id } = this.state.game;
+    const response = await api.addPublicObjective(objectiveId, id);
+    const currentObjectives = publicObjectives.slice(0);
+    const newObjective = { id: parseInt(objectiveId), roundRevealed: round };
+    currentObjectives.push(newObjective);
+    response.objectiveAdded
+      ? this.setState({
+          game: {
+            ...this.state.game,
+            publicObjectives: currentObjectives
+          }
+        })
+      : console.warn("Objective not added!");
   };
 
   render() {
@@ -111,7 +117,10 @@ export default class App extends React.Component {
         {game !== null && game.gameState === 1 && (
           <React.Fragment>
             <Nav game={game} />
-            <DisplayPage gameData={game} />
+            <DisplayPage
+              gameData={game}
+              addPublicObjectiveFn={this.addPublicObjective}
+            />
           </React.Fragment>
         )}
       </Wrapper>

@@ -6,6 +6,7 @@ import Icon from "../Icon";
 import TechBanner from "../TechBanner";
 import ObjectiveCard from "../ObjectiveCard";
 import CardListModal from "../CardListModal";
+import ClaimObjectiveModal from "../ClaimObjectiveModal";
 
 const Wrapper = styled.div`
   display: inline-block;
@@ -53,12 +54,14 @@ const TechContainer = styled.div`
 const TechTitle = styled.div``;
 
 export default function Player(props) {
-  const { name, faction, points } = props;
+  const { name, faction, points, game } = props;
   const factionObject = helpers.getFactionById(faction);
   return (
     <Wrapper>
       <GridWrapper>
-        <Name>{name}</Name>
+        <Name>
+          {name} <ClaimObjectiveModal {...game} />
+        </Name>
         <IconContainer>
           <Icon {...factionObject} size={43} />
         </IconContainer>
