@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Popup from "reactjs-popup";
 import helpers from "../../Utils/helpers";
+import ObjectiveCard from "../ObjectiveCard";
 
 const Wrapper = styled.div``;
 const Button = styled.div`
@@ -15,11 +16,13 @@ const Button = styled.div`
 
 export default class AddObjectiveModal extends React.Component {
   state = {
-    open: false
+    open: false,
+    chosenObjective: null
   };
 
   openModal = () => this.setState({ open: true });
   closeModal = () => this.setState({ open: false });
+  onChange = event => this.setState({ chosenObjective: event.target.value });
 
   render() {
     const { publicObjectives, addPublicObjectiveFn } = this.props;
@@ -32,7 +35,8 @@ export default class AddObjectiveModal extends React.Component {
           closeOnDocumentClick
         >
           <React.Fragment>
-            <select id="objective-dropdown">
+            <select id="objective-dropdown" onChange={this.onChange}>
+              <option value="">Choose an objective...</option>
               {helpers
                 .getAvailablePublicObjectives(publicObjectives)
                 .map((objective, index) => (
@@ -51,6 +55,11 @@ export default class AddObjectiveModal extends React.Component {
             >
               SUBMIT
             </Button>
+            {this.state.chosenObjective && (
+              <ObjectiveCard
+                {...helpers.getObjectiveById(this.state.chosenObjective)}
+              />
+            )}
           </React.Fragment>
         </Popup>
       </Wrapper>
