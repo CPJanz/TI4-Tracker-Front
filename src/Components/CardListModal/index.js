@@ -11,7 +11,7 @@ const ListContent = styled.div`
 
 const Header = styled.span`
   cursor: pointer;
-  margin: auto 5px;
+  // margin: auto 5px;
 `;
 
 const defaultTrigger = <FontAwesomeIcon icon="question-circle" />;

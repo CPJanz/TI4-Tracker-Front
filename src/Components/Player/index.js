@@ -4,8 +4,8 @@ import helpers from "../../Utils/helpers";
 import FactionModal from "../FactionModal";
 import Icon from "../Icon";
 import TechBanner from "../TechBanner";
-import Popup from "reactjs-popup";
 import ObjectiveCard from "../ObjectiveCard";
+import CardListModal from "../CardListModal";
 
 const Wrapper = styled.div`
   display: inline-block;
@@ -66,11 +66,9 @@ export default function Player(props) {
           {factionObject.name}
           <FactionModal factionId={factionObject.id} />
         </Faction>
-        <Popup
+        <CardListModal
           trigger={<Points>{helpers.calculatePoints(points)}</Points>}
-          modal
-          closeOnDocumentClick
-          contentStyle={{ height: "80%", overflow: "hidden" }}
+          vertical
         >
           <div>
             {points.map((point, index) => (
@@ -80,7 +78,7 @@ export default function Player(props) {
               />
             ))}
           </div>
-        </Popup>
+        </CardListModal>
         <TechContainer>
           <TechTitle>
             <TechBanner {...props} />
