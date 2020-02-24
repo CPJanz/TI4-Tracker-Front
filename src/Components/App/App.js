@@ -19,8 +19,8 @@ export default class App extends React.Component {
   state = {
     loginError: null,
     gameError: null,
-    // game: null,
-    game: mockData.TEMP_GAME_DATA,
+    game: null,
+    // game: mockData.TEMP_GAME_DATA,
     preGamePlayers: [{ name: "", faction: 0 }]
   };
 
@@ -56,6 +56,20 @@ export default class App extends React.Component {
       : this.setState({
           gameError: "There was an error starting the game"
         });
+  };
+
+  endGame = () => console.log("TODO: Write end game function");
+
+  advanceRound = async () => {
+    const response = await api.changeRoundTo(this.state.game.round + 1);
+    response.roundChanged
+      ? this.setState({
+          game: {
+            ...this.state.game,
+            round: this.state.game.round + 1
+          }
+        })
+      : console.warn("Round not advanced!");
   };
 
   addPublicObjective = async objectiveId => {
@@ -160,7 +174,7 @@ export default class App extends React.Component {
         )}
         {game !== null && game.gameState === 1 && (
           <React.Fragment>
-            <Nav game={game} />
+            <Nav game={game} advanceRoundFn={this.advanceRound} />
             <DisplayPage
               gameData={game}
               addPublicObjectiveFn={this.addPublicObjective}

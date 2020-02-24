@@ -66,6 +66,13 @@ const api = {
         resolve({ techClaimed: true, id: techId });
       }, 3000);
     });
+  },
+  changeRoundTo: (gameId, round) => {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve({ roundChanged: true, id: round });
+      }, 3000);
+    });
   }
 };
 

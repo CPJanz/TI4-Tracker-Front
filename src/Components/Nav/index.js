@@ -16,6 +16,8 @@ const GameDetails = styled.div`
   background: darkgrey;
 `;
 
+const RoundAdvancer = styled.span``;
+
 export default function Nav(props) {
   const { id, round, players } = props.game;
 
@@ -23,7 +25,8 @@ export default function Nav(props) {
     <Wrapper>
       {id && (
         <GameDetails>
-          Game Code {id} | Round {round}
+          Game Code {id} | Round {round}{" "}
+          <RoundAdvancer onClick={props.advanceRoundFn}>></RoundAdvancer>
         </GameDetails>
       )}
       <ScoreTrack players={players} />

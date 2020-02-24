@@ -42,7 +42,6 @@ export default function DisplayPage(props) {
   const { addPublicObjectiveFn, claimObjectiveFn, claimTechFn } = props;
   const { players, publicObjectives } = props.gameData;
   const objectives = objectivesToDisplay(publicObjectives, players);
-  console.log("Display Page Props", props);
   return (
     <Wrapper>
       <h3>Objectives</h3>
