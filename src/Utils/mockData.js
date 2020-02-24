@@ -9,6 +9,7 @@ const mockData = {
     players: [
       {
         name: "Carl",
+        id: 0,
         faction: 0,
         points: [
           {
@@ -25,6 +26,7 @@ const mockData = {
       },
       {
         name: "Sean",
+        id: 1,
         faction: 1,
         points: [
           {
@@ -36,6 +38,7 @@ const mockData = {
       },
       {
         name: "Nick",
+        id: 2,
         faction: 2,
         points: [
           {
@@ -51,6 +54,7 @@ const mockData = {
       },
       {
         name: "Joe",
+        id: 3,
         faction: 3,
         points: [
           {
@@ -74,12 +78,14 @@ const mockData = {
       },
       {
         name: "Alex",
+        id: 4,
         faction: 4,
         points: [],
         tech: [1, 2, 5, 11]
       },
       {
         name: "Josh",
+        id: 5,
         faction: 5,
         points: [
           {

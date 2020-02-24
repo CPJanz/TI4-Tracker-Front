@@ -19,7 +19,6 @@ const helpers = {
   getFlagshipById: id => getGenericById(id, "flagships"),
 
   getAvailablePublicObjectives: current => {
-    console.log("Current", current);
     const currentIds = current.map(objective => objective.id);
     return tiObject.objectives.filter(
       objective =>
@@ -47,6 +46,13 @@ const helpers = {
     return allSecretObjectives.filter(
       objective => !claimedSecretObjectives.includes(objective.id)
     );
+  },
+
+  hasCustodianTokenBeenClaimed: players => {
+    const result = players.filter(player =>
+      player.points.map(point => point.id).includes(0)
+    );
+    return result.length > 0;
   },
 
   getPromissoryByFactionId: factionId =>

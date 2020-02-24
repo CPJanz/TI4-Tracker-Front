@@ -54,13 +54,21 @@ const TechContainer = styled.div`
 const TechTitle = styled.div``;
 
 export default function Player(props) {
-  const { name, faction, points, game } = props;
+  const { name, id, faction, points, game, claimObjectiveFn } = props;
   const factionObject = helpers.getFactionById(faction);
   return (
     <Wrapper>
       <GridWrapper>
         <Name>
-          {name} <ClaimObjectiveModal {...game} />
+          {name}{" "}
+          <ClaimObjectiveModal
+            claimObjectiveFn={claimObjectiveFn}
+            id={id}
+            round={game.round}
+            players={game.players}
+            publicObjectives={game.publicObjectives}
+            points={points}
+          />
         </Name>
         <IconContainer>
           <Icon {...factionObject} size={43} />

@@ -74,6 +74,35 @@ export default class App extends React.Component {
       : console.warn("Objective not added!");
   };
 
+  claimObjective = async (objectiveId, playerId) => {
+    const newObjective = {
+      id: parseInt(objectiveId),
+      roundClaimed: this.state.game.round
+    };
+    const response = await api.claimObjective(
+      playerId,
+      this.state.game.id,
+      newObjective
+    );
+    const updatedPlayers = this.state.game.players.slice(0);
+    updatedPlayers.forEach(player => {
+      if (player.id === playerId) {
+        player.points.push(newObjective);
+      } else {
+        console.log(player.id, playerId);
+      }
+    });
+    console.log(updatedPlayers);
+    response.objectiveClaimed
+      ? this.setState({
+          game: {
+            ...this.state.game,
+            players: updatedPlayers
+          }
+        })
+      : console.warn("Objective not claimed!");
+  };
+
   render() {
     const { game, preGamePlayers, loginError } = this.state;
     return (
@@ -120,6 +149,7 @@ export default class App extends React.Component {
             <DisplayPage
               gameData={game}
               addPublicObjectiveFn={this.addPublicObjective}
+              claimObjectiveFn={this.claimObjective}
             />
           </React.Fragment>
         )}

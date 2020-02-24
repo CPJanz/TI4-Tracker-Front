@@ -23,11 +23,12 @@ const api = {
     });
   },
   startGame: (gameId, players) => {
-    const finalPlayers = players.map(player => {
+    const finalPlayers = players.map((player, index) => {
       return {
         ...player,
         tech: helpers.getStartingTech(player.faction),
-        points: []
+        points: [],
+        id: index
       };
     });
     const MOCK_START_GAME_DATA = {
@@ -49,7 +50,14 @@ const api = {
     return new Promise(resolve => {
       setTimeout(() => {
         resolve({ objectiveAdded: true, id: objectiveId });
-      });
+      }, 3000);
+    });
+  },
+  claimObjective: (playerId, gameId, newObjective) => {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve({ objectiveClaimed: true, id: newObjective.id });
+      }, 3000);
     });
   }
 };

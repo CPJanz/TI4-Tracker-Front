@@ -27,7 +27,6 @@ const PlayersWhoCompleted = (players, objective) => {
 };
 
 const objectivesToDisplay = (publicObjectives, players) => {
-  console.log("Public Objectives", publicObjectives);
   const results = publicObjectives.slice(0);
   players.forEach(player => {
     player.points.forEach(objective => {
@@ -40,7 +39,7 @@ const objectivesToDisplay = (publicObjectives, players) => {
 };
 
 export default function DisplayPage(props) {
-  const { addPublicObjectiveFn } = props;
+  const { addPublicObjectiveFn, claimObjectiveFn } = props;
   const { players, publicObjectives } = props.gameData;
   const objectives = objectivesToDisplay(publicObjectives, players);
   console.log("Display Page Props", props);
@@ -74,7 +73,12 @@ export default function DisplayPage(props) {
       <h3>Players</h3>
       <PlayerContainer>
         {players.map((player, index) => (
-          <Player {...player} game={props.gameData} key={index} />
+          <Player
+            {...player}
+            game={props.gameData}
+            claimObjectiveFn={claimObjectiveFn}
+            key={index}
+          />
         ))}
       </PlayerContainer>
     </Wrapper>

@@ -11,7 +11,6 @@ const Wrapper = styled.div`
 export default function ObjectiveCard(props) {
   const { name, text, pointvalue, type } = props;
   const typeString = helpers.getObjectiveTypeById(type).name;
-
   return (
     <Wrapper>
       <h2>objective card</h2>
