@@ -39,7 +39,7 @@ const objectivesToDisplay = (publicObjectives, players) => {
 };
 
 export default function DisplayPage(props) {
-  const { addPublicObjectiveFn, claimObjectiveFn } = props;
+  const { addPublicObjectiveFn, claimObjectiveFn, claimTechFn } = props;
   const { players, publicObjectives } = props.gameData;
   const objectives = objectivesToDisplay(publicObjectives, players);
   console.log("Display Page Props", props);
@@ -77,6 +77,7 @@ export default function DisplayPage(props) {
             {...player}
             game={props.gameData}
             claimObjectiveFn={claimObjectiveFn}
+            claimTechFn={claimTechFn}
             key={index}
           />
         ))}

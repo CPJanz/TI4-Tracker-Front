@@ -59,6 +59,13 @@ const api = {
         resolve({ objectiveClaimed: true, id: newObjective.id });
       }, 3000);
     });
+  },
+  claimTech: (gameId, playerId, techId) => {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve({ techClaimed: true, id: techId });
+      }, 3000);
+    });
   }
 };
 

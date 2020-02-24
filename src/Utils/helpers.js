@@ -27,6 +27,13 @@ const helpers = {
     );
   },
 
+  getAvailableTech: (researchedTech, faction) =>
+    tiObject.tech.filter(
+      techObj =>
+        !researchedTech.includes(techObj.id) &&
+        (techObj.faction === faction || techObj.faction === -1)
+    ),
+
   getUnclaimedSecretObjectives: players => {
     const allSecretObjectives = tiObject.objectives.filter(
       objective => objective.type === 4 || objective.type === 5

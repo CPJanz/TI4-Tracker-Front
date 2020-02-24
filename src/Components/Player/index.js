@@ -7,6 +7,7 @@ import TechBanner from "../TechBanner";
 import ObjectiveCard from "../ObjectiveCard";
 import CardListModal from "../CardListModal";
 import ClaimObjectiveModal from "../ClaimObjectiveModal";
+import ClaimTechModal from "../ClaimTechModal";
 
 const Wrapper = styled.div`
   display: inline-block;
@@ -93,6 +94,7 @@ export default function Player(props) {
         <TechContainer>
           <TechTitle>
             <TechBanner {...props} />
+            <ClaimTechModal {...props} />
           </TechTitle>
         </TechContainer>
       </GridWrapper>

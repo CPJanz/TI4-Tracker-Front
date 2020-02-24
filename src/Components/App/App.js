@@ -88,11 +88,8 @@ export default class App extends React.Component {
     updatedPlayers.forEach(player => {
       if (player.id === playerId) {
         player.points.push(newObjective);
-      } else {
-        console.log(player.id, playerId);
       }
     });
-    console.log(updatedPlayers);
     response.objectiveClaimed
       ? this.setState({
           game: {
@@ -101,6 +98,24 @@ export default class App extends React.Component {
           }
         })
       : console.warn("Objective not claimed!");
+  };
+
+  claimTech = async (playerId, techId) => {
+    const response = await api.claimTech(this.state.game.id, playerId, techId);
+    const updatedPlayers = this.state.game.players.slice(0);
+    updatedPlayers.forEach(player => {
+      if (player.id === playerId) {
+        player.tech.push(techId);
+      }
+    });
+    response.techClaimed
+      ? this.setState({
+          game: {
+            ...this.state.game,
+            players: updatedPlayers
+          }
+        })
+      : console.warn("Tech not claimed!");
   };
 
   render() {
@@ -150,6 +165,7 @@ export default class App extends React.Component {
               gameData={game}
               addPublicObjectiveFn={this.addPublicObjective}
               claimObjectiveFn={this.claimObjective}
+              claimTechFn={this.claimTech}
             />
           </React.Fragment>
         )}
