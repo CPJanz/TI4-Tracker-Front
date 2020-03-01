@@ -30,11 +30,37 @@ const objectivesToDisplay = (publicObjectives, players) => {
   const results = publicObjectives.slice(0);
   players.forEach(player => {
     player.points.forEach(objective => {
-      if (results.filter(result => result.id === objective.id).length === 0) {
-        results.push(objective);
+      const objectiveObject = helpers.getObjectiveById(objective.id);
+      switch (objectiveObject.type) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+          if (
+            results.filter(result => result.id === objective.id).length === 0
+          ) {
+            results.push(objective);
+          }
+          break;
+        case 4:
+        case 5:
+          console.log("Secret Objective", objectiveObject.name);
+          break;
+        case 6:
+          if (
+            results.filter(result => result.id === objective.id).length === 0
+          ) {
+            results.push(objective);
+          }
+          break;
+        case 7:
+          console.log("Support the Throne", objectiveObject.name);
+          break;
+        default:
       }
     });
   });
+  console.log(results);
   return results;
 };
 

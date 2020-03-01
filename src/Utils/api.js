@@ -2,11 +2,12 @@ import mockData from "./mockData";
 import helpers from "./helpers";
 
 const api = {
-  createGame: new Promise(resolve => {
-    setTimeout(() => {
-      resolve({ gameCreated: true, game: mockData.TEMP_NEW_GAME_DATA });
-    }, 3000);
-  }),
+  createGame: () =>
+    new Promise(resolve => {
+      setTimeout(() => {
+        resolve({ gameCreated: true, game: mockData.TEMP_NEW_GAME_DATA });
+      }, 3000);
+    }),
   fetchGame: gameIdToFetch => {
     return new Promise(resolve => {
       console.log("truthy?", gameIdToFetch === mockData.TEMP_GAME_DATA.id);

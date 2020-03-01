@@ -19,8 +19,8 @@ export default class App extends React.Component {
   state = {
     loginError: null,
     gameError: null,
-    game: null,
-    // game: mockData.TEMP_GAME_DATA,
+    // game: null,
+    game: mockData.TEMP_GAME_DATA,
     preGamePlayers: [{ name: "", faction: 0 }]
   };
 
